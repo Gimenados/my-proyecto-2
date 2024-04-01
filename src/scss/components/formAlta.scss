@@ -1,0 +1,101 @@
+.form_container_high {
+    @extend %flex-center;
+    background-image: url(../../imagenes/section.jpg);
+    background-position: 75% 100% ;
+    background-repeat: no-repeat;
+    margin-top: 62px;
+    background-size: cover;
+    flex-direction: column;
+  
+    h2 {
+      @extend %title-style;
+      border-bottom: 1px solid black;
+      text-align: center;
+      padding: 2rem 0 1rem 0;
+    }
+  
+    fieldset {
+      background-color: #f5fafdc7 !important;;
+      box-shadow: $box-primary;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 1rem 13rem;
+      padding: 1rem 2rem;
+      width: 65%;
+
+      legend {
+        font-size: 1.2rem;
+        background-color: rgb(183, 192, 197);
+        font-weight: bold;
+        font-family: "Indie Flower", cursive;
+        letter-spacing: 0.2rem;
+        padding: 0.5rem;
+        text-transform: uppercase;
+      }
+
+      .form-label-checkbox{
+        margin-bottom: 25px !important;
+        margin-right: 20px;
+       }
+  
+      label {
+        font-weight: bold;
+        font-family: "Indie Flower", cursive;
+        margin-top: 0.6rem;
+        letter-spacing: 0.2rem;
+        padding: 0.5rem;
+        &.label-required::after {
+          content: "(*)";
+          color: rgb(184, 19, 19) !important;
+          margin-left: 0.5rem;
+        }
+      }
+
+      .form-control[aria-invalid="true"] {
+        outline: 2px solid rgb(182, 17, 17);
+    }
+
+      .input-msg-error {
+        color: rgb(184, 19, 19) !important;
+        display: none;
+        font-weight: 900;
+      }
+  
+      textarea {
+        height: 40px;
+      }
+
+      input {
+        background-color: #f5fafd00 !important;;
+        border: none;
+        font-family: "Indie Flower", cursive;
+        letter-spacing: 0.15rem;
+        font-weight: 900;
+        padding: 0.5rem;
+        border-bottom: 1px solid black !important;
+      }
+  
+      .div_container {
+        display: flex;
+        input {
+          border: 50%;
+        }
+      } 
+    }
+  
+    .button_container {
+      @extend %flex-center;
+      text-align: center !important;
+      margin: 0rem 0px 3rem 0px;
+      width: 98%;
+  
+      button {
+        background-color: $primary-color;
+        font-weight: bold;
+        padding: 0.5rem;
+        text-transform: uppercase;
+      }
+    }
+  }
+  

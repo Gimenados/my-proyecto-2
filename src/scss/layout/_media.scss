@@ -1,0 +1,216 @@
+$screen-lg: 950px;
+$screen-md: 900px;
+$screen-section: 800px;
+$screen-sm: 700px;
+$screen-ct: 530px;
+$screen-s: 475px;
+$screen-ch: 350px;
+
+@media screen and (max-width: $screen-lg) {
+  .select_container_location {
+    padding-right: 16px;
+    .ifreme {
+      width: 300vw;
+      height: 150vh;
+    }
+  }
+  .cards__container {
+    .cards__element {
+      img {
+        height: 15vw;
+        width: 15vw;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $screen-md) {
+  .footer_container {
+    align-content: space-around !important;
+    flex-wrap: nowrap;
+    flex-direction: column !important;
+    justify-content: center !important;
+    padding: 2rem !important;
+    img {
+      margin-bottom: 1rem;
+    }
+    .footer_element {
+      flex-direction: row !important;
+      flex-wrap: wrap;
+      margin: 3rem 0rem 0.5rem 0rem !important;
+    }
+    .footer_element2 {
+      margin: 20px;
+    }
+  }
+
+  .section__container {
+    margin: 0;
+    padding: 7rem 1rem !important;
+  }
+
+  .slider .text_container {
+    padding: 2rem;
+    h2 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .slider_container {
+    .text_container {
+       margin: 1.5rem;
+       h2 {
+        font-size: 2rem !important;
+       }
+       p {
+        font-size: 1rem !important;
+       }
+    }
+  }
+}
+
+@media screen and (max-width: $screen-section) {
+  .select_container_us {
+    flex-wrap: wrap !important;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: $screen-sm) {
+  .form_container_contact {
+    .form_element_contact {
+      width: 70% !important;
+    }
+    h2 {
+      text-align: center;
+    }
+  }
+  .form_container_high h2 { 
+    font-size: 1.4rem;
+  }
+  .select_container_location h3 {
+    font-size: 1.4rem;
+  }
+
+  .header_container {
+    flex-wrap: wrap;
+    justify-content: center !important;
+    // height: 50%;
+
+    .header__element {
+      width: 70%;
+      margin: 0.5rem !important;
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+  .footer_container {
+    padding-top: 2.5rem !important;
+    // .footer_element {
+    //   margin-bottom: 1rem;
+    // }
+  }
+
+  .select_container_us,
+  .select_container_location {
+    width: 100%;
+  }
+
+  .select_container_us {
+    margin-top: 37px;
+  }
+
+  .select_container_us div {
+    width: 100%;
+    padding: 0rem 1rem;
+  }
+
+  .select_container_location {
+    padding-right: 16px;
+    flex-direction: column;
+  }
+  .slider_container, .form_container_high, .section__container2 {
+    margin-top: 124px !important;
+  }
+}
+
+@media screen and (max-width: $screen-ct) {
+  .section__container {
+    justify-content: end;
+    flex-wrap: nowrap;
+  }
+  .cards__container {
+    .cards__element {
+      img {
+        height: 35vw;
+        width: 35vw;
+      }
+    }
+  }
+  .form_container_high fieldset { 
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: $screen-s) {
+  .header_container .header__element__2 ul {
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+  }
+  .header_container .header__element__2 ul li {
+    margin: 0rem 1rem 1rem 1rem !important;
+  }
+  .footer_container .footer_element ul li {
+    flex-wrap: wrap;
+    // margin-bottom: 16px !important;
+    a {
+      padding: 0px !important;
+    }
+  }
+  .slider .text_container {
+    top: 68%;
+    h1 {
+      font-size: 1.4rem !important;
+    }
+    p {
+      font-size: 0.5rem !important;
+    }
+  }
+  .footer_container .footer_element_2 {
+      align-items: flex-start !important;
+      text-align: center;
+    }
+  .form_container_contact .form_element_contact {
+    h2 {
+      font-size: 1.5rem;
+  }
+  }
+}
+
+
+  @media screen and (max-width: $screen-ch) {
+  .footer_container img {
+    margin: 3rem 0rem 0.5rem 0rem;
+  }
+  .footer_container .footer_element ul {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    li {
+      margin: 0.5rem;
+    }
+  }
+  .form_container_contact .form_element_contact {
+    h2 {
+      font-size: 1rem;
+  }
+  }
+
+  }

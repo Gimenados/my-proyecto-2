@@ -1,0 +1,42 @@
+//COLORES
+$primary-color: #A1C8D7;
+$secondary-color: #dddcdf;
+$error-color: #c5dde8;
+$success-color: #ED4C3B;
+$precio-color: rgb(13, 96, 13);
+
+//BORDER
+$box-primary: -10px 4px 30px 7px #182129;
+$box-secondary: -10px 4px 30px 7px #A1C8D7;
+$margin-cards: 0.5rem 0;
+$border-img: 1px solid $secondary-color;
+
+//FLEX
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+//TITLE 
+%title-style {
+  font-family: 'Rubik Doodle Shadow', sans-serif !important;
+  letter-spacing: 0.3rem;
+  font-weight: 900;
+  font-size: 1.8rem
+}
+
+%title-style2 {
+  font-family: 'Lemon', serif;
+  letter-spacing: 0.2rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+//SECTION 
+%section-container {
+  height: 60%;
+  width: 25%;
+  margin: 0rem 1rem;
+  box-shadow: -10px 4px 30px 7px #182129;
+}

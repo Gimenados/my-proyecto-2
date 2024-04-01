@@ -1,0 +1,19 @@
+.counter__container {
+    display: flex;
+    margin: 0.7rem;
+    flex-direction: row;
+    .counter__count-text {
+        width: 80px !important;
+        margin-bottom: 0.5rem !important;
+    }
+    .counter__btn {
+        background-color: $success-color !important;
+        height: 2rem;
+        vertical-align: -0.125em;
+        border-radius: 0.1rem !important;
+        &:hover {
+            cursor: pointer;
+            scale: (1.2);
+        }
+    }
+}

@@ -1,0 +1,27 @@
+[
+    {
+        "title": "Caballo Saltarín",
+        "description": "Un juguete seguro y divertido para los más pequeños de la casa. Todos nuestros productos se envían inflados y revisados. Fabricados con plastisol PVC NO TÓXICO libre de ftalatos.",
+        "price": 31.856
+      },
+      {
+        "title": "Camión de Bomberos",
+        "description": "Resorte mágico con atractivos colores arcoíris. Es un juguete divertido que también funciona como juego anti estrés. Fabricado en plástico de muy buena calidad.",
+        "price": 18.999
+      },
+      {
+        "title": "Barbie",
+        "description": "Resorte mágico con atractivos colores arcoíris. Es un juguete divertido que también funciona como juego anti estrés. Fabricado en plástico de muy buena calidad.",
+        "price": 20.000
+      },
+      {
+        "title": "Resorte",
+        "description": "Resorte mágico con atractivos colores arcoíris. Es un juguete divertido que también funciona como juego anti estrés. Fabricado en plástico de muy buena calidad.",
+        "price": 3.999
+      },
+      {
+        "title": "Bebe llorona",
+        "description": "Resorte mágico con atractivos colores arcoíris. Es un juguete divertido que también funciona como juego anti estrés. Fabricado en plástico de muy buena calidad.",
+        "price": 90.2
+      }
+]

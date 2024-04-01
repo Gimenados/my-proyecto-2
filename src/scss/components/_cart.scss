@@ -1,0 +1,34 @@
+.cart__container {
+    position: relative;
+    .cart__navbar-button {
+        background-color: $success-color;
+        // border: 1px solid $primary-color;
+        border-radius: 0.5rem;
+        // color: $primary-color;
+        font-size: 1.35rem;
+        height: 2.5rem;
+        width: 2.5rem;
+        svg {
+            margin: auto;
+        }
+        &:hover {
+            cursor: pointer;
+          }
+    }
+    .cart__badge {
+        background-color: $secondary-color;
+        border: 1px solid $primary-color;
+        color: black;
+        font-weight: 900;
+        position: absolute;
+        right: -0.25rem;
+        top: -0.25rem;
+        font-size: 0.9rem;
+        border-radius: 100%;
+        height: 1.25rem;
+        width: 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

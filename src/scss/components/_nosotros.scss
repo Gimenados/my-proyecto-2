@@ -1,0 +1,80 @@
+.title_container {
+    h1 {
+      @extend %title-style;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.3rem;
+      background-color: $primary-color;
+      padding: 1.5rem 1rem !important;
+      font-size: 2rem
+    }
+  }
+  
+  .select_container_us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: $primary-color;
+    padding: 2rem;
+  
+    div {
+      @extend %flex-center;
+      flex-direction: column;
+      text-align: center;
+      width: 30%;
+      flex-wrap: wrap;
+    }
+
+    h2 {
+      padding: 1.5rem !important;
+      font-size: 1.3rem !important;
+      text-transform: uppercase;
+    }
+  
+    img {
+      border: 1px solid rgb(21 20 20 / 0%);;
+      border-radius: 100%;
+      margin: 1rem;
+      margin: 0.5rem !important;
+      height: 180px;
+      width: 190px;
+      &:hover {
+        transform: scale(1.15);
+        filter: drop-shadow(10px 7px 10px black);
+        cursor: pointer;
+      }
+    }
+    p {
+      font-weight: 900;
+      margin: 1rem;
+      padding: 0rem 1rem;
+    }
+  }
+  
+  .select_container_location {
+     @extend %flex-center;
+     flex-direction: column !important;
+     background-image: url(https://www.lavanguardia.com/uploads/2020/12/28/5fe96fa52fd78.jpeg);
+     background-position: 70% 45%;
+     margin-right: 0px !important;
+     background-attachment: fixed;
+     margin: 0rem 1rem 0rem 0rem;
+     height: 80vh;
+     padding: 0rem 0.5rem 1rem 0.5rem;
+     margin-bottom: 0px !important;
+    h3 {
+      border: 1px;
+      font-weight: 900;
+      font-family: "Rubik Doodle Shadow", sans-serif !important;
+      letter-spacing: 0.3rem;
+      font-size: 1.8rem;
+      margin: 0.5rem 1rem 1rem 1rem;
+      text-align: center;
+    }
+    p {
+      font-size: 1.3rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+  }

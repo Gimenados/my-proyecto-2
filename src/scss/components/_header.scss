@@ -1,0 +1,91 @@
+.header_container {
+    align-items: center;
+    background-color: #A1C8D7;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 1000; // Un valor alto para asegurarse de que el encabezado esté en la parte superior
+    top: 0;
+    position: fixed; /* Hacer que el encabezado sea fijo */
+    border-bottom: 1px solid #106181;
+    padding: 0rem 0rem 0.5rem 0rem ;
+    // height: 50px;
+
+    .header__element {
+      @extend %flex-center;
+      width: 40%;
+      padding-bottom: 0.5rem;
+      margin-top: 10px;
+  
+      img {
+        height: 38px;
+        width: 50px;
+    }
+
+      input {
+        border: 1px solid black;
+        border-radius: 30px;
+        filter: alpha(opacity=0);
+        font-size: 12px !important;
+        margin-left: 1rem;
+        outline: none;
+        padding: 0 0.5rem 0 0.5rem;
+        height: 30px;
+        width: 50%;
+    }
+  }
+  
+    .header__element__2 {
+      @extend %flex-center;
+      // margin-top: 16px !important;
+      margin-right: 10px;
+      
+      ul {
+        display: flex;
+        flex-wrap: nowrap;
+        list-style: none;
+        flex-direction: row;
+        padding: 0;
+        width: 100%;
+  
+        li {
+          display: flex;
+          flex-direction: row;
+          margin: 0 1rem;
+  
+          a {
+            color: black;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-weight: 900;
+            text-align: center;
+            text-decoration: none;
+            &:hover {
+                border-bottom: 1px solid black;
+                &:after {
+                  content: '';
+                  bottom: -5px;                 
+                  left: 0;
+                  width: 90%;
+                  // height: 2px; 
+                }
+              }
+          }
+  
+        }
+      }
+    }
+    .tienda_container {
+      padding: 0.7rem;
+      // text-transform: uppercase;
+      border-radius: 50px;
+      &:hover {
+        scale: (1.1);
+        cursor: pointer;
+      }
+      h1 {
+        text-transform: uppercase;
+        font-size: 16px;
+      }
+    }
+  }

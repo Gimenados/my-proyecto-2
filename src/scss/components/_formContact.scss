@@ -1,0 +1,110 @@
+.slider {
+    // display: flex;
+    // flex-direction: row;
+    .slider_container {
+      margin-top: 62px;
+      margin-left: 0px !important;
+      display: flex;
+      margin-top: 62px;
+      flex-wrap: wrap;
+      flex-direction: column;
+      position: relative;
+      max-width: 100% !important;
+      
+      img {
+        width: 100%;
+        height: 60% !important;
+        height: auto; 
+        box-sizing: border-box;
+        position: relative; 
+      }
+    }
+    .text_container {
+      flex-direction: column;
+      padding: 3rem;
+      background: linear-gradient(45deg, rgba(244, 246, 242, 0.12), $primary-color);
+      box-shadow: $box-primary;
+      top: 65%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 80%;
+      position: absolute;
+      h1 {
+        font-size: 2rem;
+        font-family: "Indie Flower";
+        text-align: center;
+      }
+      p {
+        font-size: 1.5rem;
+        font-family: "Indie Flower", cursive;
+        text-align: center;
+      }
+    }
+  }
+    
+  .form_container_contact {
+    align-items: center;
+    background: linear-gradient(45deg, rgb(244, 246, 242), $primary-color);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0.8rem;
+  
+     .form_element_contact {
+       align-items: center;
+       background-image: url(../../imagenes/contacto.png);
+       border: 1px solid black;
+       box-shadow: $box-primary;
+       display: flex;
+       justify-content: center;
+       flex-direction: column;
+       margin: 0.5rem 1rem;
+       padding: 1.5rem;
+       width: 50%;
+  
+     h2 {
+      @extend %title-style;
+      padding-bottom: 0.5rem;
+    }
+
+     label {
+      font-size: 1rem;
+      font-family: "Indie Flower", cursive;
+      font-weight: 900;
+      text-align: center;
+      padding: 0.8rem 0rem;
+      &.label-required::after {
+        content: "(*)";
+        color: rgb(184, 19, 19) !important;
+        margin-left: 0.5rem;
+        
+      }
+     }
+  
+     input, textarea {
+       margin: 0.5rem 4rem;
+       text-align: center;
+       padding: 0.5rem;
+       height: 25px;
+       font-size: 1rem;
+       font-weight: 900;
+       border: none;
+       border-bottom: 1px solid black;
+       width: 75%;
+       background-color: rgba(240, 248, 255, 0);
+       margin-bottom: 20px !important;
+     }
+
+     textarea {
+      height: 60px !important;
+     }
+  
+     button {
+      background-color: $primary-color;
+      font-weight: bold;
+      padding: 0.5rem;
+      text-transform: uppercase;
+     }
+  }
+  }
