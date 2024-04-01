@@ -3,8 +3,6 @@ import Card from './Card'
 import { getArticles } from '../data/api'
 
 
-import cards from '../data/card.json'
-
 function ArticlesWrapper() {
 
     const [articles, setArticles] = useState([])

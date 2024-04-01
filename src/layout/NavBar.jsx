@@ -14,7 +14,7 @@ function NavBar() {
   return (
     <header className="header_container">
       <div className="header__element">
-        <img src={logo} alt="Mi Imagen" />            
+      <img src={logo} alt="Mi Imagen" />            
         <input type="text" placeholder="Buscar" />
       </div>
       

@@ -305,7 +305,7 @@ body {
   width: 50px;
 }
 .header_container .header__element input {
-  border: 1px solid black;
+  border: 1px solid #417676;
   border-radius: 30px;
   filter: alpha(opacity=0);
   font-size: 12px !important;
