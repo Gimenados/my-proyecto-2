@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ProductsWrapper from "../components/ProductsWrapper"
+import ArticlesWrapper from "../components/ArticlesWrapper"
 
 import Card from '../components/Card';
 import Carrito from '../components/Carrito';
@@ -61,7 +61,7 @@ function Home() {
           addToCart={addToCart}
         /> */}
         <section className='cards__container'>
-            <ProductsWrapper />
+            <ArticlesWrapper />
         </section>
     </>
   );

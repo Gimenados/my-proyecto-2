@@ -11,6 +11,7 @@
         margin: 1.4rem;
         flex-direction: column !important;
         border-radius: 16px;
+        border: 1px solid $primary-color;
         @extend %flex-center;
         &:hover {
           box-shadow: 2px 3px 25px 5px $primary-color;
@@ -27,7 +28,7 @@
         img {
           // border: $border-img;
           text-align: center;
-          // margin: $margin-cards;
+          margin: $margin-cards;
           height: 8.5vw;
           width: 8.5vw;
           filter: drop-shadow(10px 7px 10px $primary-color);

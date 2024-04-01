@@ -5,10 +5,11 @@ import Counter from '../components/Counter'
 
 function Card({ id,
                 title, 
-                image, 
+                img, 
                 category, 
                 description, 
                 price, 
+                shortDesc,
                 addToCart, 
                 delivery }) {
                   
@@ -20,14 +21,14 @@ function Card({ id,
       onMouseEnter={() => setShowDetails(true)} 
       onMouseLeave={() => setShowDetails(false)}
     >
-      <img src={image} alt="Imagen del producto" />
+      <img src={img} alt={shortDesc} />
       {showDetails && (
         <div className="cards__element2">
           <h2>{title}</h2>
           <p>{description}</p>
           <b>{category}</b>
           <span>{price}</span>
-          {delivery ? <p>Envío sin cargo.</p> : undefined}
+         {delivery && <p>Envío sin cargo.</p>}
           {/* <button onClick={addToCart} className="btn btn-primary">Agregar al carrito</button> Cambiado el elemento a un button y se llama a la función addToCart directamente */}
         </div>
         
