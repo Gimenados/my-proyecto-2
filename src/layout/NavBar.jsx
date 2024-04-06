@@ -21,7 +21,7 @@ function NavBar() {
       <nav className="header__element__2">
         <ul>
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/nosotros">Sobre nosotros</Link></li>
+          <li><Link to="/nosotros">Nosotros</Link></li>
           <li><Link to="/alta">Alta</Link></li>
           <li><Link to="/contacto">Contáctanos</Link></li>
         </ul>

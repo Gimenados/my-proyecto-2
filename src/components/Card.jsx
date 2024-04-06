@@ -9,6 +9,8 @@ function Card({ id,
                 category, 
                 description, 
                 price, 
+                ageFrom,
+                ageTo,
                 shortDesc,
                 addToCart, 
                 delivery }) {
@@ -26,7 +28,8 @@ function Card({ id,
         <div className="cards__element2">
           <h2>{title}</h2>
           <p>{description}</p>
-          <b>{category}</b>
+          <b>{shortDesc}</b>
+          <b>Edad: {ageFrom} a {ageTo}</b>
           <span>{price}</span>
          {delivery && <p>Envío sin cargo.</p>}
           {/* <button onClick={addToCart} className="btn btn-primary">Agregar al carrito</button> Cambiado el elemento a un button y se llama a la función addToCart directamente */}

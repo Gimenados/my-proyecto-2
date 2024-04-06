@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ImageSlider from "../components/Slider";
+
 import section1 from "../imagenes/section1.jpg";
 import section2 from "../imagenes/section2.jpg";
 import section3 from "../imagenes/section3.jpg";
@@ -7,6 +9,9 @@ import section3 from "../imagenes/section3.jpg";
 function Nosotros() {
   return (
     <>
+    <ImageSlider />
+    
+     <div className='nosotros_container'>
       <div className="title_container">
         <h1>Quiénes somos</h1>
       </div>
@@ -27,6 +32,7 @@ function Nosotros() {
           <p>Creemos en el poder del juego y en el aprendizaje de cada uno de nosotros. <br />¡Menos pantallas, más juegos!</p>
         </div>
       </section>
+     </div>
 
       <section className="select_container_location">
         <h3>DÓNDE ESTAMOS</h3>

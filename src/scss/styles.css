@@ -3,13 +3,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lemon&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Barriecito&family=Indie+Flower&family=Luckiest+Guy&display=swap");
-.select_container_location, .select_container_us div, .header_container .header__element__2, .header_container .header__element, .form_container_high .button_container, .form_container_high, .footer_container, .cards__container .cards__element2, .cards__container .cards__element {
+.select_container_location, .nosotros_container .select_container_us div, .header_container .header__element__2, .header_container .header__element, .form_container_high .button_container, .form_container_high, .footer_container, .cards__container .cards__element2, .cards__container .cards__element {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center !important;
 }
 
-.form_container_contact .form_element_contact h2, .section__container h1, .title_container h1, .form_container_high h2 {
+.form_container_contact .form_element_contact h2, .section__container h1, .nosotros_container .title_container h1, .form_container_high h2 {
   font-family: "Rubik Doodle Shadow", sans-serif !important;
   letter-spacing: 0.3rem;
   font-weight: 900;
@@ -95,9 +95,10 @@ body {
   flex-direction: column !important;
   border-radius: 16px;
   border: 1px solid #A1C8D7;
+  background-color: #A1C8D7;
+  box-shadow: 2px 3px 25px 5px #192226;
 }
 .cards__container .cards__element:hover {
-  box-shadow: 2px 3px 25px 5px #A1C8D7;
   cursor: pointer;
 }
 .cards__container .cards__element h2 {
@@ -336,7 +337,7 @@ body {
   font-size: 0.9rem;
   text-transform: uppercase;
   font-weight: 900;
-  text-align: center;
+  text-align: start;
   text-decoration: none;
 }
 .header_container .header__element__2 ul li a:hover {
@@ -361,7 +362,7 @@ body {
   font-size: 16px;
 }
 
-.title_container h1 {
+.nosotros_container .title_container h1 {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.3rem;
@@ -369,50 +370,50 @@ body {
   padding: 1.5rem 1rem !important;
   font-size: 2rem;
 }
-
-.select_container_us {
+.nosotros_container .select_container_us {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: row;
   background-color: #A1C8D7;
-  padding: 2rem;
+  padding: 0rem 0rem 2rem 0rem;
 }
-.select_container_us div {
+.nosotros_container .select_container_us div {
   flex-direction: column;
   text-align: center;
+  align-items: center !important;
   width: 30%;
+  height: auto;
   flex-wrap: wrap;
 }
-.select_container_us h2 {
-  padding: 1.5rem !important;
+.nosotros_container .select_container_us h2 {
+  padding: 1rem !important;
   font-size: 1.3rem !important;
   text-transform: uppercase;
 }
-.select_container_us img {
+.nosotros_container .select_container_us img {
   border: 1px solid rgba(21, 20, 20, 0);
   border-radius: 100%;
-  margin: 1rem;
   margin: 0.5rem !important;
   height: 180px;
   width: 190px;
 }
-.select_container_us img:hover {
+.nosotros_container .select_container_us img:hover {
   transform: scale(1.15);
   filter: drop-shadow(10px 7px 10px black);
   cursor: pointer;
 }
-.select_container_us p {
+.nosotros_container .select_container_us p {
   font-weight: 900;
-  margin: 1rem;
   padding: 0rem 1rem;
 }
 
 .select_container_location {
   flex-direction: column !important;
-  background-image: url(https://www.lavanguardia.com/uploads/2020/12/28/5fe96fa52fd78.jpeg);
-  background-position: 70% 45%;
+  background-image: url(../../imagenes/avion2.jpeg);
+  background-position: 70% 50%;
   margin-right: 0px !important;
+  background-size: cover;
   background-attachment: fixed;
   margin: 0rem 1rem 0rem 0rem;
   height: 80vh;
@@ -457,43 +458,20 @@ body {
   text-align: center;
 }
 
-.slider .slider_container {
-  margin-top: 62px;
+.slider_container {
   margin-left: 0px !important;
   display: flex;
-  margin-top: 62px;
   flex-wrap: wrap;
   flex-direction: column;
   position: relative;
   max-width: 100% !important;
 }
-.slider .slider_container img {
+.slider_container img {
   width: 100%;
-  height: 60% !important;
-  height: auto;
+  max-height: 70vh !important;
+  opacity: 0.9;
   box-sizing: border-box;
   position: relative;
-}
-.slider .text_container {
-  flex-direction: column;
-  padding: 3rem;
-  background: linear-gradient(45deg, rgba(244, 246, 242, 0.12), #A1C8D7);
-  box-shadow: -10px 4px 30px 7px #182129;
-  top: 65%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 80%;
-  position: absolute;
-}
-.slider .text_container h1 {
-  font-size: 2rem;
-  font-family: "Indie Flower";
-  text-align: center;
-}
-.slider .text_container p {
-  font-size: 1.5rem;
-  font-family: "Indie Flower", cursive;
-  text-align: center;
 }
 
 .form_container_contact {
@@ -501,9 +479,10 @@ body {
   background: linear-gradient(45deg, rgb(244, 246, 242), #A1C8D7);
   display: flex;
   flex-direction: column;
+  margin-top: 70px;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 0.8rem;
+  padding: 1rem;
 }
 .form_container_contact .form_element_contact {
   align-items: center;
@@ -641,8 +620,17 @@ body {
 }
 @media screen and (max-width: 800px) {
   .select_container_us {
-    flex-wrap: wrap !important;
-    flex-direction: column;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .select_container_us div {
+    width: 80% !important;
+    margin-bottom: 0.4rem;
+  }
+  .header_container .header__element__2 {
+    margin-right: 10px;
+    justify-content: space-between;
+    width: 100%;
   }
 }
 @media screen and (max-width: 700px) {
@@ -677,18 +665,11 @@ body {
   .select_container_location {
     width: 100%;
   }
-  .select_container_us {
-    margin-top: 37px;
-  }
-  .select_container_us div {
-    width: 100%;
-    padding: 0rem 1rem;
-  }
   .select_container_location {
     padding-right: 16px;
     flex-direction: column;
   }
-  .slider_container, .form_container_high, .section__container2, .section__container {
+  .form_container_high, .section__container2, .section__container, .form_container_contact, .slider_container {
     margin-top: 124px !important;
   }
 }
@@ -708,8 +689,8 @@ body {
 @media screen and (max-width: 475px) {
   .header_container .header__element__2 ul {
     flex-wrap: wrap;
-    text-align: center;
-    justify-content: center;
+    text-align: start;
+    justify-content: start;
   }
   .header_container .header__element__2 ul li {
     margin: 0rem 1rem 1rem 1rem !important;
@@ -744,7 +725,7 @@ body {
   .footer_container .footer_element ul {
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
   }
   .footer_container .footer_element ul li {
     margin: 0.5rem;

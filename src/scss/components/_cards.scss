@@ -12,9 +12,10 @@
         flex-direction: column !important;
         border-radius: 16px;
         border: 1px solid $primary-color;
+        background-color: $primary-color;
+        box-shadow: 2px 3px 25px 5px #192226;
         @extend %flex-center;
         &:hover {
-          box-shadow: 2px 3px 25px 5px $primary-color;
           cursor: pointer;
         }
       

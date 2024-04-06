@@ -1,55 +1,30 @@
-.slider {
-    // display: flex;
-    // flex-direction: row;
-    .slider_container {
-      margin-top: 62px;
+   .slider_container {
       margin-left: 0px !important;
       display: flex;
-      margin-top: 62px;
       flex-wrap: wrap;
+      // max-height: 60% !important;
       flex-direction: column;
       position: relative;
       max-width: 100% !important;
       
       img {
         width: 100%;
-        height: 60% !important;
-        height: auto; 
+        max-height: 70vh !important;
+        opacity: 0.9; 
         box-sizing: border-box;
         position: relative; 
       }
     }
-    .text_container {
-      flex-direction: column;
-      padding: 3rem;
-      background: linear-gradient(45deg, rgba(244, 246, 242, 0.12), $primary-color);
-      box-shadow: $box-primary;
-      top: 65%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 80%;
-      position: absolute;
-      h1 {
-        font-size: 2rem;
-        font-family: "Indie Flower";
-        text-align: center;
-      }
-      p {
-        font-size: 1.5rem;
-        font-family: "Indie Flower", cursive;
-        text-align: center;
-      }
-    }
-  }
     
   .form_container_contact {
     align-items: center;
     background: linear-gradient(45deg, rgb(244, 246, 242), $primary-color);
     display: flex;
     flex-direction: column;
+    margin-top: 70px;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 0.8rem;
+    padding: 1rem;
   
      .form_element_contact {
        align-items: center;
