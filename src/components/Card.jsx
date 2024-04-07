@@ -1,7 +1,5 @@
-// Card.jsx
 import React, { useState } from 'react';
-
-import Counter from '../components/Counter'
+import Counter from '../components/Counter';
 
 function Card({ id,
                 title, 
@@ -28,27 +26,24 @@ function Card({ id,
         <div className="cards__element2">
           <h2>{title}</h2>
           <p>{description}</p>
-          <b>{shortDesc}</b>
           <b>Edad: {ageFrom} a {ageTo}</b>
           <span>{price}</span>
-         {delivery && <p>Envío sin cargo.</p>}
-          {/* <button onClick={addToCart} className="btn btn-primary">Agregar al carrito</button> Cambiado el elemento a un button y se llama a la función addToCart directamente */}
+          {delivery && <p>Envío sin cargo.</p>}
         </div>
-        
       )}
 
       <Counter 
-                id={id}
-                toyData={{
-                title,
-                img,
-                category,
-                brand,
-            }}
+        id={id}
+        toyData={{
+          title,
+          img,
+          category,
+          brand,
+          price,
+          shortDesc,
+        }}
       />
-      
     </div>
-    
   );
 }
 

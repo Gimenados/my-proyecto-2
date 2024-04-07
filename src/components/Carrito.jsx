@@ -10,6 +10,7 @@ import CartItem from './CartItem';
 function Cart() {
     const { CartList } = useContext(CartContext); 
     const [open, setOpen] = useState(false);
+    
 
     return (
         <>

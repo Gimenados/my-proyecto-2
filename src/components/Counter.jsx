@@ -22,6 +22,8 @@ function Counter({ id, toyData, initialValue = 0 }) {
             setCount(count - 1);
             removeToy(id)
         }
+        //Mostrar mensaje cuando se retira un producto del carrito
+        alert('El producto fue retirado del carrito')
     }
 
     const increment = () => {
@@ -30,8 +32,12 @@ function Counter({ id, toyData, initialValue = 0 }) {
             id,
             toyData,
             quantity: count + 1
-        })
+        });
+
+        // Mostrar mensaje de alerta cuando se agrega un producto
+        alert('El producto fue agregado al carrito');
     }
+
 
     return (
         <div className="counter__container">

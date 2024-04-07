@@ -7,15 +7,17 @@ function Modal({children, show, onClose}) {
 
     useEffect(() => {
         if (show) {
-            modalRef.current.focus()
+            // Poner el foco en el modal cuando se muestra
+            modalRef.current.focus();
         }
-    }, [show])
+    }, [show]);
     
-    const handleKeyPress = e => {
-        if (e.key === "Escape") {
-            onClose()
+    const handleKeyDown = e => {
+        // Si la tecla presionada es "Escape", cierra el modal
+        if (e.key === 'Escape') {
+            onClose();
         }
-    }
+    };
 
     return (
         show ? (
@@ -24,9 +26,8 @@ function Modal({children, show, onClose}) {
                     ref={modalRef} 
                     className='modal__container' 
                     onClick={ e => e.stopPropagation()}
-                    // tabIndex="0"
-                    // onBlur={onClose}
-                    onKeyDown={handleKeyPress}>
+                    tabIndex="-1" // Agregar tabIndex para que el div sea enfocable y pueda recibir eventos de teclado
+                    onKeyDown={handleKeyDown}>
                     {children}
                 </div>
             </div>

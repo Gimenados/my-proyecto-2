@@ -6,7 +6,6 @@ import Nosotros from "../pages/Nosotros"; // Importa el componente NosotrosPage
 import Alta from "../pages/Alta";
 import Contacto from "../pages/Contacto"
 
-
 import NavBar from "../layout/NavBar";
 import Footer from "../layout/Footer";
 
@@ -14,8 +13,8 @@ function RouterApp() {
   return (
     <BrowserRouter>
       {/* IMPORTAMOS EL COMPONENTE ENCABEZADO DE LA PAGINA */}
-      <NavBar /> 
-
+      <NavBar />
+      
       <Routes>
         {/* IMPORTAMOS EL COMPONENTE HOME A EL INDEX */}
         <Route path="/" element={<Home />} />

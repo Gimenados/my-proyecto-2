@@ -26,3 +26,14 @@
         text-align: center
     }
   }
+  .title {
+    width: 100%;
+    background-color: #dddcdf;
+    border-top: 1px solid #838284;
+    h2 {
+      @extend %title-style;
+      padding: 1rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }

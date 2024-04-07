@@ -77,6 +77,7 @@ body {
 .counter__container .counter__btn {
   background-color: #ED4C3B !important;
   height: 2rem;
+  width: 2rem;
   vertical-align: -0.125em;
   border-radius: 0.1rem !important;
 }
@@ -89,8 +90,8 @@ body {
   background-color: #dddcdf;
   display: flex;
   justify-content: center;
+  overflow-x: auto;
   flex-wrap: wrap;
-  flex-direction: row !important;
 }
 .cards__container .cards__element {
   display: flex;
@@ -141,6 +142,8 @@ body {
   flex-wrap: wrap;
   flex-direction: column;
   margin: 0.4rem;
+  max-width: 18vw;
+  max-height: 25vh;
   border-radius: 16px;
 }
 .cards__container .cards__element2 button {
@@ -553,6 +556,7 @@ body {
 }
 .modal__overlay .modal__container {
   background-image: url(https://www.xtrafondos.com/wallpapers/patron-de-conejo-arte-7865.jpg);
+  opacity: 19;
   border-radius: 0.9rem;
   height: 25rem;
   padding: 0rem 0.5rem;
@@ -563,7 +567,7 @@ body {
   box-shadow: 2px 3px 25px 5px #192226;
   justify-content: start;
   overflow-y: auto;
-  width: 45rem;
+  width: 55rem;
 }
 .modal__overlay .modal__container:hover {
   transition: none;
@@ -586,9 +590,10 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
+  width: 100%;
 }
-.modal__overlay .modal__container .cart-item__container h2, .modal__overlay .modal__container .cart-item__container p, .modal__overlay .modal__container .cart-item__container .counter_container {
+.modal__overlay .modal__container .cart-item__container h2, .modal__overlay .modal__container .cart-item__container p {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   text-transform: uppercase;
