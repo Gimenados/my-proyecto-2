@@ -2,9 +2,16 @@
     display: flex;
     margin: 0.7rem;
     flex-direction: row;
+    align-items: center;
+    p {
+        text-align: center;
+        font-weight: 900;
+        margin: 0rem 0.4rem !important;
+    }
     .counter__count-text {
         width: 80px !important;
-        margin-bottom: 0.5rem !important;
+        font-weight: bold;
+        text-align: center;
     }
     .counter__btn {
         background-color: $success-color !important;

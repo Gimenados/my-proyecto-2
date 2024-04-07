@@ -1,27 +1,35 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useContext, useEffect, useState } from 'react'
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
-import React, { useState, useContext } from 'react';
-
 
 import { CartContext } from '../context/CartContext'
+
 import Text from '../components/Text'
 import Button from '../components/Button'
 
-const INITIAL_STATE = 0; //Inicialice en 0
 
-export default function Counter({id}) {
-    const [count, setCount] = useState(INITIAL_STATE)
-    const { addToy, removeToys } = useContext(CartContext);
+function Counter({ id, toyData, initialValue = 0 }) {
+    const [count, setCount] = useState(initialValue);
+    const { addToy, removeToy, CartList } = useContext(CartContext);
+
+    useEffect(() => {
+        const toy = CartList.find(toy => toy.id === id);
+        setCount(toy?.quantity || 0);
+    }, [CartList, id]);
+
 
     const decrement = () => {
-        if(count > 0) setCount(count - 1)
-        removeToys(id) // Reducir la cantidad del producto en el carrito
+        if (count > 0) {
+            setCount(count - 1);
+            removeToy(id)
+        }
     }
+
     const increment = () => {
-        setCount(count + 1)
+        setCount(count + 1);
         addToy({
             id,
-            quantity: 1 // Agregar solo 1 al carrito al incrementar
+            toyData,
+            quantity: count + 1
         })
     }
 
@@ -46,3 +54,5 @@ export default function Counter({id}) {
         </div>
     )
 }
+
+export default Counter

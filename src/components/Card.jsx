@@ -10,9 +10,9 @@ function Card({ id,
                 description, 
                 price, 
                 ageFrom,
+                brand,
                 ageTo,
-                shortDesc,
-                addToCart, 
+                shortDesc, 
                 delivery }) {
                   
   const [showDetails, setShowDetails] = useState(false);
@@ -37,7 +37,15 @@ function Card({ id,
         
       )}
 
-      <Counter id={id}/>
+      <Counter 
+                id={id}
+                toyData={{
+                title,
+                img,
+                category,
+                brand,
+            }}
+      />
       
     </div>
     

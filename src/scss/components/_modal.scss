@@ -1,28 +1,61 @@
 .modal__overlay {
     align-items: center;
-    background-color: rgb(209, 225, 231);
+    background-color: rgba(0, 0, 0, 0.248);
     display: flex;
     height: 100vh;
     justify-content: center;
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100vw;
-    z-index: 2;
+    left: 0 !important;
+    transition: none;
+    width: 100vw !important;
+    z-index: 1000;
     .modal__container {
-        background-color: white;
-        border-radius: 1rem;
-        height: 30rem;
-        width: 50rem;
+        background-image: url(https://www.xtrafondos.com/wallpapers/patron-de-conejo-arte-7865.jpg);
+        border-radius: 0.9rem;
+        height: 25rem;
+        padding: 0rem 0.5rem;
+        transition: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        box-shadow: 2px 3px 25px 5px #192226;
+        justify-content: start;
+        overflow-y: auto;
+        width: 45rem;
+        &:hover {
+            transition: none;
+        }
         .modal__header {
             display: flex;
             justify-content: end;
             width: 100%;
             .modal__close {
-                border-radius: 0.25rem;
+                background-color: $success-color;
+                border: none;
+                border-radius: 3.5rem;
                 color: white;
-                margin: 1rem
+                justify-self: end;
+                padding: 0.3rem;
+                margin: 1rem;
             }
+        }
+        .cart-item__container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            h2, p, .counter_container {
+                margin-left: 0.5rem;
+                margin-right: 0.5rem;
+                text-transform: uppercase;
+            }
+        }
+        &:focus {
+            outline: none;
+        }
+        &:hover {
+            transition: none;
         }
     }
 }

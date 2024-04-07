@@ -2,12 +2,12 @@ import React from 'react'
 import Icon from './Icon'
 
 export default function Button({
-    label,
-    icon = "",
-    action = () => {},
-    className,
-    type = "button",
-    disabled
+  label,
+  icon = "",
+  action = () => {},
+  className,
+  type = "button",
+  disabled
 }) {
   return (
     <button
@@ -16,7 +16,7 @@ export default function Button({
         onClick={action}
         disabled={disabled}
     >
-        {icon ? <Icon icon={icon} />  : undefined}
+        {icon && <Icon icon={icon} />} {/* Utilizar la evaluación corta y && para renderizar el icono si está presente */}
         {label}
     </button>
   )

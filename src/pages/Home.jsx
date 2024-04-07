@@ -1,15 +1,6 @@
 import React, { useState } from 'react';
 import ArticlesWrapper from "../components/ArticlesWrapper"
 
-import Card from '../components/Card';
-import Carrito from '../components/Carrito';
-
-import cards1 from '../imagenes/caballo.webp';
-import cards2 from '../imagenes/bombero1.webp';
-import cards3 from '../imagenes/resorte.webp';
-import cards4 from '../imagenes/barbie1.webp';
-import cards5 from '../imagenes/llorona1 - copia.webp';
-
 function Home() {  
 
   const [carrito, setCarrito] = useState([]);

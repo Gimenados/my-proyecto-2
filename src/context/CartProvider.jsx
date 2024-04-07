@@ -1,38 +1,47 @@
-// CartProvider.jsx
 import React, { useState } from 'react'
 import { CartContext } from './CartContext'
 
-function CartProvider({ children }) {
-    const [cart, setCart] = useState([])
-
-    const addToys = (toyToAdd) => {
-        const existingToyIndex = cart.findIndex(toy => toy.id === toyToAdd.id);
+function CartProvider({children}) {
+    const [CartList, setToyCartList] = useState([])
     
-        if (existingToyIndex !== -1) {
-          // Si el juguete ya está en el carrito, actualiza su cantidad
-          const updatedCart = [...cart];
-          updatedCart[existingToyIndex].quantity += toyToAdd.quantity;
-          setCart(updatedCart);
+    const addToy = data => {
+        const toyFinded = CartList.find(toy => toy.id === data.id)
+        if (toyFinded) {
+            setToyCartList(
+                CartList.map(
+                    toy => toy.id === data.id ? data : toy
+                )
+            )
         } else {
-          // Si el juguete no está en el carrito, agrégalo
-          setCart([...cart, toyToAdd]);
+            setToyCartList([...CartList, data])
         }
-    };
+    }
 
-    const removeToys = id => {
-        const updatedCart = cart.filter(toy => toy.id !== id);
-        setCart(updatedCart);
+    const removeToy = id => {
+        const toyFinded = CartList.find(toy => toy.id === id)
+        if (toyFinded?.quantity > 1) {
+            setToyCartList(
+                CartList.map(
+                    toy => toy.id === id ? {
+                        ...toy,
+                        quantity: toy.quantity -1
+                    } : toy
+                )
+            )
+        } else {
+            setToyCartList(CartList.filter( toy => toy.id !== id ))
+        }
     }
 
     return (
         <CartContext.Provider value={{
-            cart,
-            addToys,
-            removeToys
+            CartList,
+            addToy,
+            removeToy
         }}>
             {children}
         </CartContext.Provider>
     )
 }
 
-export default CartProvider
+export default CartProvider;

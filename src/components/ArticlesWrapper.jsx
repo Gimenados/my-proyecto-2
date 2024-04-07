@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Card from './Card'
 import { getArticles } from '../data/api'
 
-
 function ArticlesWrapper() {
-
     const [articles, setArticles] = useState([])
 
     useEffect(() => {
@@ -12,24 +10,20 @@ function ArticlesWrapper() {
             .then(
                 data => setArticles(data)
             )
-            .catch( err => console.error(err))
+            .catch(err => console.error(err))
     }, [])
-    
 
     return (
         <div style={{ display: 'flex'}}>
             <div className="cards__container">
-                {
-                    articles.map(
-                        articles =>
-                            <Card 
-                                key={articles.id}
-                                {...articles}
-                            />
-                    )
-                }
+                {/* Verificar si articles es un array antes de llamar a map */}
+                {Array.isArray(articles) && articles.map(article => (
+                    <Card 
+                        key={article.id}
+                        {...article}
+                    />
+                ))}
             </div>
-            
         </div>
     )
 }

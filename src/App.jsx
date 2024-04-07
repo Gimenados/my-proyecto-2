@@ -1,6 +1,6 @@
 import RouterApp from "./routes/RouterApp";
 
-import { CartProvider } from '../src/context/CartContext';
+import CartProvider from './context/CartProvider';
 
 function App() {
   return (
