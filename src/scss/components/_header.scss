@@ -11,6 +11,11 @@
     padding: 0rem 0rem 0.5rem 0rem ;
     // height: 50px;
 
+    //Navbar 
+    .navbar-menu {
+      display: none;
+    }
+
     .header__element {
       @extend %flex-center;
       width: 40%;
@@ -38,18 +43,24 @@
     .header__element__2 {
       @extend %flex-center;
       margin-right: 10px;
+
+      .modal__close {
+        display: none;
+      }
       
       ul {
         display: flex;
         flex-wrap: nowrap;
         list-style: none;
         flex-direction: row;
-        padding: 0;
         width: 100%;
+        padding: 1rem;
+        top: 0;
   
         li {
           display: flex;
           flex-direction: row;
+          justify-content: center;
           margin: 0 1rem;
   
           a {

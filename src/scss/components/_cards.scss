@@ -4,7 +4,6 @@
     justify-content: center;
     overflow-x: auto;
     flex-wrap: wrap;
-    // flex-direction: row !important;
     
     .cards__element {
         display: flex;
@@ -28,7 +27,6 @@
         }
         
         img {
-          // border: $border-img;
           text-align: center;
           margin: $margin-cards;
           height: 8.5vw;
@@ -63,8 +61,6 @@
       flex-wrap: wrap;
       flex-direction: column;
       margin: 0.4rem;
-      max-width: 18vw;
-      max-height: 25vh;
       border-radius: 16px;
       @extend %flex-center;
 

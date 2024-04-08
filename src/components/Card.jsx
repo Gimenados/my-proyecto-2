@@ -5,7 +5,8 @@ function Card({ id,
                 title, 
                 img, 
                 category, 
-                description, 
+                description,
+                stock, 
                 price, 
                 ageFrom,
                 brand,
@@ -28,6 +29,7 @@ function Card({ id,
           <p>{description}</p>
           <b>Edad: {ageFrom} a {ageTo}</b>
           <span>{price}</span>
+          <p>{stock}</p>
           {delivery && <p>Envío sin cargo.</p>}
         </div>
       )}
@@ -39,6 +41,7 @@ function Card({ id,
           img,
           category,
           brand,
+          stock,
           price,
           shortDesc,
         }}

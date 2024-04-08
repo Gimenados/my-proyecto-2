@@ -33,40 +33,25 @@
         padding: 0.5rem;
         text-transform: uppercase;
       }
-
-      .form-label-checkbox{
-        margin-bottom: 25px !important;
-        margin-right: 20px;
-       }
   
       label {
         font-weight: bold;
         font-family: "Indie Flower", cursive;
         margin-top: 0.6rem;
         letter-spacing: 0.2rem;
+        width: 80%;
         padding: 0.5rem;
-        &.label-required::after {
-          content: "(*)";
-          color: rgb(184, 19, 19) !important;
-          margin-left: 0.5rem;
-        }
       }
 
       .form-control[aria-invalid="true"] {
         outline: 2px solid rgb(182, 17, 17);
     }
-
-      .input-msg-error {
-        color: rgb(184, 19, 19) !important;
-        display: none;
-        font-weight: 900;
-      }
   
       textarea {
         height: 40px;
       }
 
-      input {
+      .input-group__input {
         background-color: #f5fafd00 !important;;
         border: none;
         font-family: "Indie Flower", cursive;
