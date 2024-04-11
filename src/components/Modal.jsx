@@ -5,6 +5,7 @@ function Modal({children, show, onClose}) {
 
     const modalRef = useRef()
 
+    // Ejecutar una función cada vez que el valor de show cambie
     useEffect(() => {
         if (show) {
             // Poner el foco en el modal cuando se muestra
@@ -12,6 +13,7 @@ function Modal({children, show, onClose}) {
         }
     }, [show]);
     
+    // Se ejecutará cuando se presione una tecla dentro del modal.
     const handleKeyDown = e => {
         // Si la tecla presionada es "Escape", cierra el modal
         if (e.key === 'Escape') {
@@ -40,6 +42,7 @@ Modal.propTypes = {
     show: bool
 }
 
+//Por defecto, el modal no se mostrará (show: false)
 Modal.defaultProps = {
     show: false
 }

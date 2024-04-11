@@ -1,6 +1,7 @@
 import React from 'react'
 import Counter from './Counter'
 
+// Contenido del modal
 function CartItem({ id, img, toyData, stock, price, quantity, shortDesc, CartList }) {
     // Verifica si toyData está definido antes de intentar acceder a sus propiedades
     if (!toyData) {

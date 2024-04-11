@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { postMessage } from '../data/api';
 
-
-
 const ContactForm = () => {
+
+    // Almacena los valores del formulario (name, email y comment). loadingForm indica si el formulario está en proceso de envío o no.
     const [formData, setFormData] = useState({ 
         name: '',
         email: '', 
@@ -11,11 +11,13 @@ const ContactForm = () => {
     });
     const [loadingForm, setLoadingForm] = useState(false);
 
+    // Se ejecuta cada vez que cambia algún campo del formulario. Actualiza el estado formData con los nuevos valores.
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({ ...prevData, [name]: value }));
     };
 
+    // Que se ejecuta cuando se envía el formulario.
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -40,15 +42,18 @@ const ContactForm = () => {
             return;
         }
 
+        //Si se envia el formulario respuesta
         setLoadingForm(true);
         try {
             const data = await postMessage(formData);
-            console.log(data); // Maneja la respuesta de la API según lo necesites
+            console.log(data); 
             alert('¡El formulario se envió correctamente!');
             setFormData({ name: '', email: '', comment: '' });
+        //Si hay un error
         } catch (error) {
             console.error(error);
             alert('Hubo un error al enviar el formulario');
+        //Finalmente, independientemente de si la solicitud se realiza correctamente o no, se ejecuta el bloque finally para ocultar el indicador de carga con setLoadingForm(false)
         } finally {
             setLoadingForm(false);
         }

@@ -4,6 +4,7 @@ import iconFacebook from '../assets/faFacebook.svg'
 import iconInstagram from '../assets/faInstagram.svg'
 import iconTiktok from '../assets/faTiktok.svg'
 
+//Componentes para las las redes
 function SocialMedia() {
     return (
         <div className='socialmedia__wrapper'>

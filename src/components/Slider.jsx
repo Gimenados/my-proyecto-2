@@ -23,7 +23,9 @@ const ImageSlider = () => {
   return (
    
       <div className="slider_container">
+        {/* Map para poder iterar sobre el array de imagenes */}
         {images.map((image, i) => (
+          
           <img key={i} src={image} alt={`Slide ${i}`} style={{ display: index === i ? 'block' : 'none' }} />
         ))}
       </div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Counter from '../components/Counter';
 
+//Objeto props para tomar los datos de la card
 function Card({ id,
                 title, 
                 img, 
@@ -14,6 +15,7 @@ function Card({ id,
                 shortDesc, 
                 delivery }) {
                   
+  // Este estado se utiliza para controlar si se muestran o no los detalles adicionales de la tarjeta cuando el usuario pasa el ratón sobre ella.                
   const [showDetails, setShowDetails] = useState(false);
 
   return (
@@ -23,6 +25,7 @@ function Card({ id,
       onMouseLeave={() => setShowDetails(false)}
     >
       <img src={img} alt={shortDesc} />
+      {/* Si showDetails es true, muestra un bloque de información adicional */}
       {showDetails && (
         <div className="cards__element2">
           <h2>{title}</h2>

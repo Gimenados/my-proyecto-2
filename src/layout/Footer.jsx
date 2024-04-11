@@ -1,4 +1,3 @@
-//FOOTER DE LA PAGINA 
 import SocialMedia from "../components/SocialMedia";
 
 import { Link } from "react-router-dom";

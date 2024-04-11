@@ -7,8 +7,11 @@ import Button from "./Button";
 import Modal from "./Modal";
 import CartItem from './CartItem';
 
+//Elementos agregados al carrito
 function Cart() {
+    //Obtener la lista de productos 
     const { CartList } = useContext(CartContext); 
+    //Apertura y cierre del modal
     const [open, setOpen] = useState(false);
     
 
@@ -34,7 +37,7 @@ function Cart() {
                     : undefined 
                 }
             </div>
-            {/* Aquí envuelve los elementos en un contenedor único  */}
+            {/* Cuando open es true. Utiliza el componente Modal y pasa el estado open como prop show  */}
             <Modal show={open} onClose={()=>setOpen(false)}>
                 <div className="modal__header">
                     <Button
@@ -44,6 +47,7 @@ function Cart() {
                     />
                 </div>
                 {
+                    // Itera sobre la lista de productos en el carrito 
                     CartList.map(
                         data =>
                             <CartItem
