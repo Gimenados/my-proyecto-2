@@ -5,6 +5,7 @@ import { useForm } from '../hooks/Form';
 import { postMessage } from '../data/api';
 import { validateForm, showErrors, showLoadedProduct } from '../hooks/Validation';
 
+//Variable que contiene las propiedades que representan los campos del formulario
 const initialValue = {
     name: '',
     price: '',
@@ -23,21 +24,29 @@ function Alta() {
     const { values, handleInputChange, resetForm } = useForm(initialValue);
     const [loadingForm, setLoadingForm] = useState(false);
 
+    //Envia el formulario 
     const handleSubmit = (event) => {
         event.preventDefault();
         const errores = validateForm(values);
 
+        // Si no hay errores
         if (Object.keys(errores).length === 0) {
+            // Si los estados se cargan bien 
             setLoadingForm(true);
+            //Enviar los datos del formulario
             postMessage(values)
+            //Promesa para respuesta del servidor
                 .then(data => {
                     console.log(data);
+                    // Mensaje de alerta que se cargo correctamente
                     showLoadedProduct();
                 })
+                //Si el formulario no se envia, solicitus por metodo Catch
                 .catch(err => {
                     console.error(err);
                     alert('Error al cargar el producto');
                 })
+                //Finalmemte se restablece el formulario, haya sigo exitosa o no la solicitus
                 .finally(() => {
                     setLoadingForm(false);
                     resetForm();
@@ -47,6 +56,8 @@ function Alta() {
         }
     };
 
+
+    //Obheto que contiene la configurracion para cada campo del formulario
     const inputProps = {
         name: {
             inputLabel: "Nombre",
@@ -97,6 +108,7 @@ function Alta() {
             {/* Grupo 1: Información general */}
             <fieldset>
                 <legend>Información general</legend>
+                {/* Object para tomar el objeto y iterar sobre cada uno de los inputs  */}
                 {Object.entries(inputProps).map(([key, props]) => (
                     key === 'name' || key === 'price' || key === 'stock' || key === 'brand' || key === 'category' ? (
                         <InputField
@@ -162,6 +174,21 @@ function Alta() {
                  ))}
             </fieldset>
 
+            {/* Grupo 5: delivery */}
+            <fieldset>
+            {Object.entries(inputProps).map(([key, props]) => (
+                    key === 'delivery' ? (
+                          <InputField
+                             key={key}
+                             id={key}
+                             label={props.inputLabel}
+                             type={props.inputType}
+                             value={values[key]}
+                             onChange={handleInputChange}
+             />
+                    ) : null
+                ))}
+            </fieldset>
 
             <div className="button_container">
                 <button type="submit" className="btn btn-primary">Guardar producto</button>
