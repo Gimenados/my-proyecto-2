@@ -224,7 +224,7 @@ body {
   flex-direction: column;
   justify-content: center;
   margin: 1rem 13rem;
-  padding: 1rem 2rem;
+  padding: 1rem;
   width: 65%;
 }
 .form_container_high fieldset legend {
@@ -293,7 +293,7 @@ body {
   display: none;
 }
 .header_container .header__element {
-  width: 40%;
+  width: 80%;
   padding-bottom: 0.5rem;
   margin-top: 10px;
 }
@@ -411,8 +411,8 @@ body {
 
 .select_container_location {
   flex-direction: column !important;
-  background-image: url(../../imagenes/avion2.jpeg);
-  background-position: 70% 50%;
+  background-image: url(https://cdn.urbantecno.com/rootear/2013/12/google-localizaci%C3%B3n.jpg);
+  background-position: 70% 20%;
   margin-right: 0px !important;
   background-size: cover;
   background-attachment: fixed;
@@ -532,7 +532,7 @@ body {
   font-weight: 900;
   border: none;
   border-bottom: 1px solid black;
-  width: 75%;
+  width: 49%;
   background-color: rgba(240, 248, 255, 0);
   margin-bottom: 20px !important;
 }
@@ -695,7 +695,7 @@ body {
 }
 @media screen and (max-width: 710px) {
   .form_container_contact .form_element_contact {
-    width: 70% !important;
+    width: 90% !important;
   }
   .form_container_contact h2 {
     text-align: center;
@@ -707,7 +707,10 @@ body {
     justify-content: space-between !important;
   }
   .modal__overlay .modal__container .cart-item__container {
-    height: 50%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
   }
   .footer_container {
     padding-top: 2.5rem !important;
@@ -732,9 +735,10 @@ body {
   .cards__container .cards__element img {
     height: 26vw;
     width: 26vw;
+    margin-bottom: 0.6rem;
   }
   .form_container_high fieldset {
-    width: 85%;
+    min-width: 85%;
   }
 }
 @media screen and (max-width: 475px) {

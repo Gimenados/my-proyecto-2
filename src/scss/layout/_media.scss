@@ -95,7 +95,7 @@ $screen-ch: 350px;
 @media screen and (max-width: $screen-sm) {
   .form_container_contact {
     .form_element_contact {
-      width: 70% !important;
+      width: 90% !important;
     }
     h2 {
       text-align: center;
@@ -110,7 +110,10 @@ $screen-ch: 350px;
   }
 
   .modal__overlay .modal__container .cart-item__container {
-  height: 50%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
   }
 
   .footer_container {
@@ -141,11 +144,12 @@ $screen-ch: 350px;
       img {
         height: 26vw;
         width: 26vw;
+        margin-bottom: 0.6rem;
       }
     }
   }
   .form_container_high fieldset { 
-    width: 85%;
+    min-width: 85%;
   }
 }
 
