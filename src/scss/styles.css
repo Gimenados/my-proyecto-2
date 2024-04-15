@@ -412,7 +412,6 @@ body {
 .select_container_location {
   flex-direction: column !important;
   background-image: url(../../imagenes/avion2.jpeg);
-  background-position: 70% 50%;
   margin-right: 0px !important;
   background-size: cover;
   background-attachment: fixed;
@@ -607,6 +606,7 @@ body {
 .modal__overlay .modal__container .cart-item__container img {
   width: 70px;
   height: 70px;
+  margin-bottom: 0.6rem;
 }
 .modal__overlay .modal__container .cart-item__container h2, .modal__overlay .modal__container .cart-item__container p {
   margin-left: 0.5rem;
@@ -735,7 +735,7 @@ body {
   .cards__container .cards__element img {
     height: 26vw;
     width: 26vw;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.6rem !important;
   }
   .form_container_high fieldset {
     min-width: 85%;
