@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../imagenes/logo.png";
+import logo from "../imagenes/logo1.webp";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -42,7 +42,9 @@ function NavBar() {
        <FontAwesomeIcon icon={faBars} />
       </div>
       <div className={`header__element ${!isMenuOpen && !isSmallScreen ? 'show' : ''}`}>
-        <img src={logo} alt="Mi Imagen" />            
+      <Link to="/"> 
+        <img src={logo} alt="Mi Imagen" /> 
+      </Link>          
         <input type="text" placeholder="Buscar" />
       </div>
       <nav className={`header__element__2 ${isMenuOpen ? 'open' : ''}`}>
