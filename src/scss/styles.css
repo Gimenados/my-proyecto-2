@@ -411,8 +411,8 @@ body {
 
 .select_container_location {
   flex-direction: column !important;
-  background-image: url(https://cdn.urbantecno.com/rootear/2013/12/google-localizaci%C3%B3n.jpg);
-  background-position: 70% 20%;
+  background-image: url(../../imagenes/avion2.jpeg);
+  background-position: 70% 50%;
   margin-right: 0px !important;
   background-size: cover;
   background-attachment: fixed;
@@ -856,9 +856,9 @@ body {
     border: none;
     color: white;
     justify-self: end !important;
-    padding: 0.2rem;
+    padding: 0.3rem;
     display: block;
-    margin-bottom: 37px !important;
+    margin-bottom: 55px !important;
     position: relative !important;
   }
 }/*# sourceMappingURL=styles.css.map */
