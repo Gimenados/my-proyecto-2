@@ -379,6 +379,7 @@ body {
   flex-direction: row;
   background-color: #A1C8D7;
   padding: 0rem 0rem 2rem 0rem;
+  border-bottom: 1px solid rgb(30, 80, 123);
 }
 .nosotros_container .select_container_us div {
   flex-direction: column;
