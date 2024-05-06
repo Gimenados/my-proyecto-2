@@ -5,9 +5,9 @@ function Home() {
 
   const [carrito, setCarrito] = useState([]);
 
-  const addToCart = (product) => {
-    setCarrito([...carrito, product]);
-  };
+  // const addToCart = (product) => {
+  //   setCarrito([...carrito, product]);
+  // };
   
   return (
     <>

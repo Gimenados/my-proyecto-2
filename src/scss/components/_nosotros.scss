@@ -58,12 +58,9 @@
   
   .select_container_location {
      @extend %flex-center;
+     background-color: $primary-color;
      flex-direction: column !important;
-     background-image: url(../../imagenes/avion2.jpeg);
-    //  background-position: 70% 50%;
      margin-right: 0px !important;
-     background-size: cover;
-     background-attachment: fixed;
      margin: 0rem 1rem 0rem 0rem;
      height: 80vh;
      padding: 0rem 0.5rem 1rem 0.5rem;

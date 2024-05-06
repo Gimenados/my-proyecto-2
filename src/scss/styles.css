@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lemon&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Barriecito&family=Indie+Flower&family=Luckiest+Guy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
 .select_container_location, .nosotros_container .select_container_us div, .header_container .header__element__2, .header_container .header__element, .form_container_high .button_container, .form_container_high, .footer_container, .cards__container .cards__element2, .cards__container .cards__element {
   display: flex;
   justify-content: center;
@@ -208,7 +209,7 @@ body {
   background-image: url(../../imagenes/section.jpg);
   background-position: 75% 100%;
   background-repeat: no-repeat;
-  margin-top: 62px;
+  margin-top: 80px;
   background-size: cover;
   flex-direction: column;
 }
@@ -410,11 +411,9 @@ body {
 }
 
 .select_container_location {
+  background-color: #A1C8D7;
   flex-direction: column !important;
-  background-image: url(../../imagenes/avion2.jpeg);
   margin-right: 0px !important;
-  background-size: cover;
-  background-attachment: fixed;
   margin: 0rem 1rem 0rem 0rem;
   height: 80vh;
   padding: 0rem 0.5rem 1rem 0.5rem;

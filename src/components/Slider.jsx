@@ -18,7 +18,7 @@ const ImageSlider = () => {
     }, 3000);
     // Función de limpieza del efecto secundario para detener el intervalo cuando el componente se desmonta o actualiza
     return () => clearInterval(interval);
-  }, []); // El array vacío indica que este efecto solo se ejecuta una vez
+  }, [images.length]); // El array vacío indica que este efecto solo se ejecuta una vez
 
   return (
    
