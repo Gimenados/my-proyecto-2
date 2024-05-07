@@ -18,7 +18,7 @@
       flex-direction: row;
       background-color: $primary-color;
       padding: 0rem 0rem 2rem 0rem;
-      border-bottom: 1px solid rgb(30, 80, 123);
+      // border-bottom: 1px solid rgb(30, 80, 123);
     
       div {
         @extend %flex-center;
@@ -59,7 +59,7 @@
   
   .select_container_location {
      @extend %flex-center;
-     background-color: $primary-color;
+     background-color: #bcd4dd;
      flex-direction: column !important;
      margin-right: 0px !important;
      margin: 0rem 1rem 0rem 0rem;
@@ -72,7 +72,7 @@
       font-family: "Rubik Doodle Shadow", sans-serif !important;
       letter-spacing: 0.3rem;
       font-size: 1.8rem;
-      margin: 0.5rem 1rem 1rem 1rem;
+      margin: 1.4rem 1rem 1.4rem 1rem;
       text-align: center;
     }
     p {
