@@ -1,6 +1,6 @@
 import { Products } from "../models/Products.js"
 
-
+//Para crear un producto
 export const createProduct = async (req, res) => {
     const {body} = req
     try {
@@ -30,3 +30,4 @@ export const createProduct = async (req, res) => {
         })  //Error interno
     }
 } 
+
