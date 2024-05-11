@@ -9,29 +9,32 @@
         display: flex;
         flex-wrap: wrap;
         margin: 1.4rem;
+        position: relative; /* Para que la imagen absoluta se posicione relativa a este elemento */
         flex-direction: column !important;
-        border-radius: 16px;
+        border-radius: 5px;
         border: 1px solid $primary-color;
         background-color: $primary-color;
-        box-shadow: 2px 3px 25px 5px #192226;
+        box-shadow: 1px 1px 2px 1px #7d7d7d;
         @extend %flex-center;
-        &:hover {
-          cursor: pointer !important;
-        }
-      
-        h2 {
-          font-size: 1rem !important;
-          font-weight: bold;
-          text-align: center;
-          text-transform: uppercase;
-        }
+        position: relative; /* Para que la imagen se posicione correctamente */
+        transition: margin-top 0.3s ease; /* Añadimos transición para suavizar el efecto */
         
         img {
           text-align: center;
           margin: $margin-cards;
           height: 8.5vw;
+          position: relative; /* Establecemos posición relativa por defecto */
           width: 8.5vw;
+          object-fit: cover; /* Ajusta la imagen dentro del tamaño de la tarjeta sin deformarla */
+          transition: transform 0.3s ease; /* Para una transición suave */
           filter: drop-shadow(10px 7px 10px $primary-color);
+          &:hover {
+            transform: translateY(-25px); /* Desplaza la imagen hacia arriba */
+            z-index: 1; /* Coloca la imagen por encima del resto de los elementos */
+            position: relative; /* Restaura la posición relativa */
+            cursor: pointer;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Agrega una sombra debajo de la imagen */
+          }
         }
 
         p, span {

@@ -21,21 +21,22 @@ function Card({ id,
   return (
     <div 
       className="cards__element" 
-      onMouseEnter={() => setShowDetails(true)} 
-      onMouseLeave={() => setShowDetails(false)}
+      // onMouseEnter={() => setShowDetails(true)} 
+      // onMouseLeave={() => setShowDetails(false)}
     >
       <img src={img} alt={shortDesc} />
       {/* Si showDetails es true, muestra un bloque de información adicional */}
-      {showDetails && (
+      {/* {showDetails && ( */}
         <div className="cards__element2">
           <h2>{title}</h2>
           <p>{description}</p>
           <b>Edad: {ageFrom} a {ageTo}</b>
-          <span>{price}</span>
-          <p>{stock}</p>
+          <span>${price}</span>
+          <p>Stock: {stock}</p>
           {delivery && <p>Envío sin cargo.</p>}
         </div>
-      )}
+      {
+      /* ) */}
 
       <Counter 
         id={id}

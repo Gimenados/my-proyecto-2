@@ -1,24 +1,43 @@
+$duration: 2s; // Duración de la animación
+$position: 50%; // Posición final del título (centrado horizontalmente)
+
 .section__container {
-    align-items: center;
-    margin-top: 62px;
-    background-image: url(../../imagenes/fondo.jpg);
-    background: {
-      // image: url(/imagenes/fondo.jpg);
-      position: 100% 48rem;
-      height: 100%;
-    }
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 3rem 1rem;
-    width: 100%;
-    height: 19rem;
+  align-items: center;
+  margin-top: 62px;
+  width: 100% !important;
+  position: relative; // Mantén el posicionamiento relativo del contenedor
+  background-image: url(../../imagenes/fondo.jpg);
+  background: {
+    position: 100% 48rem;
+    height: 100%;
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 3rem 1rem;
+  width: 100% !important;
+  height: 19rem;
 
     h1 {
-        @extend %title-style;
-        text-align: center;
-        margin-bottom: 8px;
+      @extend %title-style;
+      position: absolute; // Utiliza posicionamiento absoluto para el título
+      top: 50%; // Centrado vertical con transformación
+      left: 50%; // Centrado horizontal con transformación
+      transform: translate(-50%, -50%); // Centra el título vertical y horizontalmente
+      animation: slideIn $duration forwards; // Duración y retención de la animación
+      margin-bottom: 8px;
+      font-size: 2.2rem;
+      text-align: center;
     }
+
+    @keyframes slideIn {
+      0% {
+          left: -100%; // Fuera del área visible al inicio
+      }
+      100% {
+          left: $position; // Entra desde la izquierda hasta la posición final
+      }
+  }
 
     p {
         font-weight: 900;

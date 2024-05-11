@@ -1,7 +1,7 @@
 $screen-lg: 950px;
 $screen-md: 900px;
 $screen-section: 800px;
-$screen-sm: 710px;
+$screen-sm: 740px;
 $screen-ct: 530px;
 $screen-s: 475px;
 $screen-ch: 350px;
@@ -42,11 +42,6 @@ $screen-ch: 350px;
     .footer_element2 {
       margin: 20px;
     }
-  }
-
-  .section__container {
-    margin: 0;
-    padding: 7rem 1rem !important;
   }
 
   .slider .text_container {
@@ -135,10 +130,6 @@ $screen-ch: 350px;
 }
 
 @media screen and (max-width: $screen-ct) {
-  .section__container {
-    justify-content: end;
-    flex-wrap: nowrap;
-  }
   .cards__container {
     .cards__element {
       img {
@@ -288,4 +279,3 @@ $screen-ch: 350px;
     }
     }
   }
-  
