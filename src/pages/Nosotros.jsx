@@ -10,7 +10,6 @@ function Nosotros() {
   return (
     <>
     <ImageSlider />
-    
      <div className='nosotros_container'>
       <div className="title_container">
         <h1>Quiénes somos</h1>
