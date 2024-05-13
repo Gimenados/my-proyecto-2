@@ -2,11 +2,23 @@ import { Products } from "../models/Products.js"
 
 //Para crear un producto
 export const createProduct = async (req, res) => {
-    const {body} = req
+    const {body, file} = req
     try {
-        const product = await Products.create(body);
+        if (!file) {
+            return res.status(400)
+            .json({
+                ok: false,
+                msg: "La foto es obligatoria."
+            })
+        }
+        console.log(body)
+        console.log(file.filename)
+        const product = await Products.create({
+            ...body,
+            imgUrl: `${process.env.BASE_URL}/public/${file.filename}`
+        });
 
-        //Validar que por si alguna razon no valido nada 
+        //Validar que por si alguna razon no valido nada
         if (!product) {
             return res.status(400)
             .json({
