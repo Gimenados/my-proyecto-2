@@ -15,7 +15,7 @@ const api = async () => {
     server.use(express.json())
     server.use(cors())
     
-    server.use('/public', express.static(`/temp/imgs`)) //Hace referencia a la ubicacion donde este alojado el proyecto ya sea en un servidor o local
+    server.use('/public', express.static(`./temp/imgs`)) //Hace referencia a la ubicacion donde este alojado el proyecto ya sea en un servidor o local
     server.use("/api/products", productsRoutes) //La ruta y despues de la coma a donde va a ir 
     
     server.listen(process.env.PORT, () => console.log(`Servidor corriendo en el puerto ${process.env.PORT}`))
