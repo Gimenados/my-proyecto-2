@@ -15,7 +15,7 @@ export const createProduct = async (req, res) => {
         console.log(file.filename)
         const product = await Products.create({
             ...body,
-            imgUrl: `${process.env.BASE_URL}/public/${file.filename}`
+            imgUrl: `${process.env.BASE_URL}/public/${file.filename}` //Armamos la base url del archivo
         });
 
         //Validar que por si alguna razon no valido nada
