@@ -43,3 +43,19 @@ export const createProduct = async (req, res) => {
     }
 } 
 
+export const getProducts = async (req, res) => {
+    try {
+        const products = await Products.find() 
+        //Nuestra data del products
+        res.json({
+            ok: true,
+            products
+        })
+    } catch (error) {
+        console.log(error); 
+        res.status(500).json({
+            ok: false,
+            msg: "Ha habido un error al obtener los productos"
+        })  //Error interno
+    }
+}

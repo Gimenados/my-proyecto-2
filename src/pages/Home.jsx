@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import ArticlesWrapper from "../components/ArticlesWrapper"
+// import React, { useState } from 'react';
+import ProductsWrapper from "../components/ProductsWrapper"
 
 function Home() {  
 
-  const [carrito, setCarrito] = useState([]);
+  // const [carrito, setCarrito] = useState([]);
 
   // const addToCart = (product) => {
   //   setCarrito([...carrito, product]);
@@ -19,7 +19,7 @@ function Home() {
         <h2>Listado de productos</h2>
       </div>
       <section className='cards__container'>
-        <ArticlesWrapper />
+        <ProductsWrapper />
       </section>
     </>
     );

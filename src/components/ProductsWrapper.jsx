@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import Card from './Card'
-import { getArticles } from '../data/api'
+import { getProducts } from '../data/api'
 
 //Lista de Cards
-function ArticlesWrapper() {
+function ProductsWrapper() {
     //Almacena la lista y la actualiza
-    const [articles, setArticles] = useState([])
+    const [products, setProducts] = useState([])
 
     useEffect(() => {
-        getArticles()
+        getProducts()
             .then(
-                data => setArticles(data)
+                data => setProducts(data.products)
             )
             .catch(err => console.error(err))
     }, [])
@@ -18,11 +18,11 @@ function ArticlesWrapper() {
     return (
         <div style={{ display: 'flex'}}>
             <div className="cards__container">
-                {/* Verificar si articles es un array antes de llamar a map*/}
-                {Array.isArray(articles) && articles.map(article => (
+                {/* Verificar si products es un array antes de llamar a map*/}
+                {Array.isArray(products) && products.map(product => (
                     <Card 
-                        key={article.id}
-                        {...article}
+                        key={product.id}
+                        {...product}
                     />
                 ))}
             </div>
@@ -30,4 +30,4 @@ function ArticlesWrapper() {
     )
 }
 
-export default ArticlesWrapper
+export default ProductsWrapper
