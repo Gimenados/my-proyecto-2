@@ -17,6 +17,6 @@ export const postMessage = async body => {
     return resp.data;
 } 
 
-// export const postArticles = async () => {
-//     const resp = await axiosInstance.post("/articles", body)
+// export const postProducts = async () => {
+//     const resp = await axiosInstance.post("/products", body)
 // }
