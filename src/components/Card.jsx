@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import Counter from '../components/Counter';
 
 //Objeto props para tomar los datos de la card
@@ -16,7 +16,7 @@ function Card({ id,
                 delivery }) {
                   
   // Este estado se utiliza para controlar si se muestran o no los detalles adicionales de la tarjeta cuando el usuario pasa el ratón sobre ella.                
-  const [showDetails, setShowDetails] = useState(false);
+  // const [showDetails, setShowDetails] = useState(false);
 
   return (
     <div 
