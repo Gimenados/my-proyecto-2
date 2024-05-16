@@ -4,7 +4,7 @@ import Counter from '../components/Counter';
 //Objeto props para tomar los datos de la card
 function Card({ id,
                 title, 
-                img, 
+                imgUrl, 
                 category, 
                 description,
                 stock, 
@@ -24,7 +24,7 @@ function Card({ id,
       // onMouseEnter={() => setShowDetails(true)} 
       // onMouseLeave={() => setShowDetails(false)}
     >
-      <img src={img} alt={shortDesc} />
+      <img src={imgUrl} alt={shortDesc} />
       {/* Si showDetails es true, muestra un bloque de información adicional */}
       {/* {showDetails && ( */}
         <div className="cards__element2">
@@ -42,7 +42,7 @@ function Card({ id,
         id={id}
         toyData={{
           title,
-          img,
+          imgUrl,
           category,
           brand,
           stock,

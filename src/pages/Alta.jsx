@@ -22,7 +22,7 @@ const initialValue = {
 
 function Alta() {
     const { values, handleInputChange, resetForm } = useForm(initialValue);
-    const [loadingForm, setLoadingForm] = useState(false);
+    const [ setLoadingForm] = useState(false);
 
     //Envia el formulario 
     const handleSubmit = (event) => {
