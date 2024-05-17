@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { faClose, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 import { CartContext } from "../context/CartContext";

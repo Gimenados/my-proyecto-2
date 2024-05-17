@@ -1,4 +1,4 @@
-// import React, { useState } from 'react';
+import React from 'react';
 import ProductsWrapper from "../components/ProductsWrapper"
 
 function Home() {  
@@ -26,5 +26,4 @@ function Home() {
   }
 
   export default Home;
-
 
