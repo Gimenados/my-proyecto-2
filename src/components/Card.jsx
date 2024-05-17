@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Counter from '../components/Counter';
 
 //Objeto props para tomar los datos de la card
