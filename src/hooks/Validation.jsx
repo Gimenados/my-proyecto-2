@@ -1,3 +1,5 @@
+// TODO: Este archivo deberia estar en alguna carpeta utils. No es un custom hook
+
 const validateStrings = (string) => {
     const regex = new RegExp("^[A-Za-z Ññ]+$");
     return regex.test(string);
