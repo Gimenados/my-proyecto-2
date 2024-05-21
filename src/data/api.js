@@ -18,8 +18,15 @@ export const postMessage = async body => {
     return resp.data;
 } 
 
-// TODO: Esta función no se usa, debe ser eliminada
-// export const postProducts = async body => {
-//     const resp = await axiosInstance.post("/products", body)
-//     return resp.data;
-// }
+export const postProducts = async body => {
+  const formData = new FormData()
+  Object.entries(body).forEach(([key, value]) => {
+      formData.append(key, value)
+  })
+  const resp = await axiosInstance.post("/products", formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+  })
+  return resp.data;
+}

@@ -1,7 +1,15 @@
 // InputField.jsx
 import React from 'react';
 
-function InputField({ id, label, type = "text", value, onChange }) {
+function InputField({ 
+    id, 
+    label, 
+    type = "text", 
+    value, 
+    onChange,
+    ...props
+ }) {
+    
     if (type === "file") {
         return (
             <div className="input-group__container">
@@ -12,6 +20,7 @@ function InputField({ id, label, type = "text", value, onChange }) {
                     type={type}
                     onChange={onChange}
                     className="input-group__input"
+                    {...props}
                 />
             </div>
         );
@@ -27,6 +36,7 @@ function InputField({ id, label, type = "text", value, onChange }) {
                     value={value}
                     onChange={onChange}
                     className="input-group__input"
+                    {...props}
                 ></textarea>
             ) : (
                 <input
@@ -36,6 +46,7 @@ function InputField({ id, label, type = "text", value, onChange }) {
                     value={value}
                     onChange={onChange}
                     className="input-group__input"
+                    {...props}
                 />
             )}
         </div>

@@ -1,61 +1,50 @@
 import React, { useState } from 'react';
 import Text from '../components/Text';
 import InputField from '../components/InputField';
-import { useForm } from '../hooks/Form';
-import { postMessage } from '../data/api';
+import { useForm } from '../hooks/useForm';
+import { postProducts } from '../data/api';
 import { validateForm, showErrors, showLoadedProduct } from '../hooks/Validation';
 
 //Variable que contiene las propiedades que representan los campos del formulario
 const initialValue = {
-    name: '',
-    price: '',
-    stock: '',
-    category: '',
-    brand: '',
-    ageFrom: '',
-    ageTo: '',
-    shortDesc: '',
-    longDesc: '',
-    img: '',
-    delivery: '',
+    name: "",
+    price: 0,
+    stock: 0,
+    brand: "",
+    category: "",
+    shortDesc: "",
+    longDesc: "",
+    ageFrom: 0,
+    ageTo: 0,
 };
 
 function Alta() {
     const { values, handleInputChange, resetForm } = useForm(initialValue);
-    const [ setLoadingForm] = useState(false);
+    const [loadingForm, setLoadingForm] = useState(false);
 
-    //Envia el formulario 
     const handleSubmit = (event) => {
         event.preventDefault();
         const errores = validateForm(values);
 
-        // Si no hay errores
         if (Object.keys(errores).length === 0) {
-            // Si los estados se cargan bien 
             setLoadingForm(true);
-            //Enviar los datos del formulario
-            postMessage(values)
-            //Promesa para respuesta del servidor
+            postProducts(values) // Llama a postProducts con los valores del formulario
                 .then(data => {
                     console.log(data);
-                    // Mensaje de alerta que se cargo correctamente
                     showLoadedProduct();
                 })
-                //Si el formulario no se envia, solicitus por metodo Catch
                 .catch(err => {
                     console.error(err);
                     alert('Error al cargar el producto');
                 })
-                //Finalmemte se restablece el formulario, haya sigo exitosa o no la solicitus
                 .finally(() => {
                     setLoadingForm(false);
                     resetForm();
                 });
         } else {
-            showErrors(errores, inputProps);
+            showErrors(errores);
         }
     };
-
 
     //Obheto que contiene la configurracion para cada campo del formulario
     const inputProps = {
@@ -91,9 +80,10 @@ function Alta() {
             inputLabel: "Descripción larga",
             inputType: "textarea"
         },
-        img: {
+        image: {
             inputLabel: "Foto",
-            inputType: "file"
+            inputType: "file",
+            accept: "image/*"
         },
         delivery: {
             inputLabel: "Envío sin cargo",
@@ -161,7 +151,7 @@ function Alta() {
            <fieldset>
                 <legend>Foto</legend>
                 {Object.entries(inputProps).map(([key, props]) => (
-                    key === 'img' ? (
+                    key === 'image' ? (
                         <InputField
                            key={key}
                            id={key}
