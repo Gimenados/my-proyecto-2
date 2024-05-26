@@ -15,7 +15,7 @@ export const getProducts = async () => {
 
 //Esta función toma un parámetro body que representa el cuerpo del mensaje a ser enviado
 export const postMessage = async body => {
-    const resp = await axiosInstance.post("/products", body)
+    const resp = await axiosInstance.post("/messages", body)
     return resp.data;
 } 
 

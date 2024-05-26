@@ -2,58 +2,58 @@ import React, { useState } from 'react';
 import { postMessage } from '../data/api';
 
 const ContactForm = () => {
-
-    // Almacena los valores del formulario (name, email y comment). loadingForm indica si el formulario está en proceso de envío o no.
     const [formData, setFormData] = useState({ 
         name: '',
         email: '', 
-        comment: '' 
+        subject: '',
+        body: ''  // Cambiado de 'comment' a 'body'
     });
     const [loadingForm, setLoadingForm] = useState(false);
 
-    // Se ejecuta cada vez que cambia algún campo del formulario. Actualiza el estado formData con los nuevos valores.
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({ ...prevData, [name]: value }));
     };
 
-    // Que se ejecuta cuando se envía el formulario.
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const { name, email, comment } = formData;
+        const { name, email, subject, body } = formData;  
 
-        // Validar el nombre
         if (name.length <= 5) {
-            alert('El nombre debe tener menos de 5 letras');
+            alert('El nombre debe tener más de 5 letras');
             return;
         }
 
-        // Validar el correo electrónico
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
             alert('El formato del correo electrónico es incorrecto');
             return;
         }
 
-        // Validar el comentario
-        if (comment.length < 5) {
+        if (body.length < 5) {  
             alert('El comentario debe tener al menos 5 letras');
             return;
         }
 
-        //Si se envia el formulario respuesta
+        if (subject.length <= 2) {
+            alert('El asunto debe tener más de 2 letras');
+            return;
+        }
+
         setLoadingForm(true);
         try {
             const data = await postMessage(formData);
             console.log(data); 
             alert('¡El formulario se envió correctamente!');
-            setFormData({ name: '', email: '', comment: '' });
-        //Si hay un error
+            setFormData({ name: '', email: '', subject: '', body: '' });  
         } catch (error) {
-            console.error(error);
-            alert('Hubo un error al enviar el formulario');
-        //Finalmente, independientemente de si la solicitud se realiza correctamente o no, se ejecuta el bloque finally para ocultar el indicador de carga con setLoadingForm(false)
+            console.error('Error details:', error.response?.data || error.message || error);
+            if (error.response && error.response.data && error.response.data.errors) {
+                alert(`Errores de validación: ${error.response.data.errors.map(err => err.body).join(', ')}`);
+            } else {
+                alert('Hubo un error al enviar el formulario');
+            }
         } finally {
             setLoadingForm(false);
         }
@@ -62,7 +62,7 @@ const ContactForm = () => {
     return (
         <div className="form_container_contact" id="form">
             <form className="form_element_contact" onSubmit={handleSubmit}>
-                <h2>Envianos un mensaje</h2>
+                <h2>Envíanos un mensaje</h2>
                 <label htmlFor="name">
                     Nombre:
                     <input 
@@ -83,13 +83,23 @@ const ContactForm = () => {
                         onChange={handleChange} 
                     />
                 </label>
-                <label htmlFor="comment">
+                <label htmlFor="subject">
+                    Asunto:
+                    <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleChange}
+                     />
+                </label>
+                <label htmlFor="body">  
                     Comentarios:
                     <textarea 
-                        id="comment" 
-                        name="comment" 
+                        id="body" 
+                        name="body"  
                         rows="4" 
-                        value={formData.comment} 
+                        value={formData.body}  
                         onChange={handleChange} 
                     />
                 </label>
@@ -104,3 +114,4 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+
