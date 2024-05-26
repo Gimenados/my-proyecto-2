@@ -1,8 +1,9 @@
 import axios from "axios";
 
-//TODO: Ruta hardcodeada. Esto tiene que estar en un .env
+//TODO: Ruta hardcodeada
+console.log(process.env.REACT_APP_BASE_URL_API)
 const axiosInstance = axios.create({
-    baseURL: "http://localhost:3001/api"
+    baseURL: process.env.REACT_APP_BASE_URL_API
 })
 
 //Recibe las informacion en el componente.  Espera a que se resuelva la solicitud y devuelve los datos de respuesta.
