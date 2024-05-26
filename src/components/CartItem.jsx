@@ -2,7 +2,7 @@ import React from 'react'
 import Counter from './Counter'
 
 // Contenido del modal
-function CartItem({ id, imgUrl, toyData, stock, price, quantity, shortDesc, CartList }) {
+function CartItem({ _id, imgUrl, toyData, stock, price, quantity, shortDesc, CartList }) {
     // Verifica si toyData está definido antes de intentar acceder a sus propiedades
     if (!toyData) {
         return <div>Loading...</div>;
@@ -19,7 +19,7 @@ function CartItem({ id, imgUrl, toyData, stock, price, quantity, shortDesc, Cart
                 <p>Stock: ({toyData.stock})</p>
                 <p>Categoria: {toyData.category}</p>
             <Counter 
-               id={id} 
+               _id={_id} 
                toyData={toyData}
                initialValue={quantity}
 />

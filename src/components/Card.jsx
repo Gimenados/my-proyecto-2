@@ -2,7 +2,7 @@ import React from 'react';
 import Counter from '../components/Counter';
 
 //Objeto props para tomar los datos de la card
-function Card({ id,
+function Card({ _id,
                 name, 
                 imgUrl, 
                 category, 
@@ -39,7 +39,7 @@ function Card({ id,
       /* ) */}
 
       <Counter 
-        id={id}
+        _id={_id}
         toyData={{
           name,
           imgUrl,

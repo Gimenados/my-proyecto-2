@@ -30,7 +30,9 @@ function ProductsWrapper() {
       <div className="cards__container">
         {Array.isArray(products) && products.length > 0 ? (
           products.map(product => (
-            <Card key={product._id} {...product} />
+            <Card 
+               key={product._id} 
+               {...product} />
           ))
         ) : (
           <div>No products found</div>
