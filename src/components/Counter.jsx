@@ -7,25 +7,25 @@ import Text from '../components/Text'
 import Button from '../components/Button'
 
                 // Representa el valor inicial del contador.
-function Counter({ _id, toyData, initialValue = 0 }) {
+function Counter({ _id, product, initialValue = 0 }) {
     // Para almacenar la cantidad actual del producto en el contador.
     const [count, setCount] = useState(initialValue);
     // Para agregar o eliminar productos del carrito
-    const { addToy, removeToy, ProductsCartList } = useContext(CartContext);
+    const { addProd, removeProd, productsCartList } = useContext(CartContext);
 
     //Para actualizar el estado del contador
     useEffect(() => {
         //Se busca un juguete que coincida con el id 
-        const toy = ProductsCartList.find(toy => toy._id === _id);
+        const productItem = productsCartList.find( prod => prod.product._id === _id)
         //Una vez encontrado el juguete se establece el estado del contador, si no se encuentra el juguete el contador se establece a 0
-        setCount(toy?.quantity || 0);
-    }, [ProductsCartList, _id]); 
+        setCount(productItem?.quantity || 0);
+    }, [productsCartList, _id]); 
 
     //Boton de ( - )
     const decrement = () => {
         if (count > 0) {
             setCount(count - 1);
-            removeToy(_id)
+            removeProd(_id)
         }
         //Mostrar mensaje cuando se retira un producto del carrito
         alert('El producto fue retirado del carrito')
@@ -34,9 +34,9 @@ function Counter({ _id, toyData, initialValue = 0 }) {
     //Boton de ( + )
     const increment = () => {
         setCount(count + 1);
-        addToy({
+        addProd({
             _id,
-            toyData,
+            product,
             quantity: count + 1
         });
 

@@ -26,20 +26,21 @@ function CartProvider({ children }) {
             product: _id
         }
         // Con find busca si ya existe un juguete con el mismo ID
-        const prodFinded = productsCartList.find(prod => prod.product === _id)
+        const prodFinded = productsCartList.find(prod => prod.product?._id === _id)
         // Si prodFinded es verdadero, o sea que encontró el ID del juguete
         if (prodFinded) {
             // Itera sobre cada elemento del array
             const newCart = productsCartList.map(
-                prod => prod.product === _id ? { ...prod, quantity: prod.quantity + quantity } : prod
+                prod => prod.product?._id === data.product ? data : prod
             )
             editCart(idCart, newCart)
                 .then(({ cart }) => setProdCartList(cart.items))
         // Si no coincide
         } else {
             if (!idCart) {
-                postCart(data)
-                    .then(cart => {
+                postCart([data])
+                    .then(({cart}) => {
+                        console.log(cart)
                         localStorage.setItem("cartId", cart._id)
                         setIdCart(cart._id)
                         setProdCartList(cart.items)
@@ -59,9 +60,9 @@ function CartProvider({ children }) {
         // Comprueba si prodFinded existe y si la propiedad quantity del juguete es mayor que 1.
         if (prodFinded?.quantity > 1) {
             const newCart = productsCartList.map(
-                prod => prod.product === id ? {
+                prod => prod.product._id === id ? {
                     ...prod,
-                    quantity: prod.quantity - 1
+                    quantity: prod.quantity -1
                 } : prod
             )
             editCart(idCart, newCart)

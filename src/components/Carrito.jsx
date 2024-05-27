@@ -10,7 +10,7 @@ import CartItem from './CartItem';
 //Elementos agregados al carrito
 function Cart() {
     //Obtener la lista de productos 
-    const { ProductsCartList } = useContext(CartContext); 
+    const { productsCartList } = useContext(CartContext); 
     //Apertura y cierre del modal
     const [open, setOpen] = useState(false);
     
@@ -22,20 +22,16 @@ function Cart() {
                     icon={faShoppingCart}
                     className="cart__navbar-button"
                     action={() => setOpen(!open)}
-                    disabled={!ProductsCartList.length} 
+                    disabled={!productsCartList.length} 
                 />
-                {
-                    ProductsCartList.length ? 
-                        <div className="cart__badge">
-                            <span>
-                                {ProductsCartList.reduce( 
-                                    (acc, toys) => acc + toys.quantity,
-                                    0
-                                )}
-                            </span>
-                        </div>
-                    : undefined 
-                }
+                {productsCartList.length && (
+                    <div className="cart__badge">
+                    <span>
+                   {productsCartList.reduce((acc, toys) => acc + toys.quantity, 0)}
+                  </span>
+            </div>
+            )}
+
             </div>
             {/* Cuando open es true. Utiliza el componente Modal y pasa el estado open como prop show  */}
             <Modal show={open} onClose={()=>setOpen(false)}>
@@ -48,10 +44,10 @@ function Cart() {
                 </div>
                 {
                     // Itera sobre la lista de productos en el carrito 
-                    ProductsCartList.map(
+                    productsCartList.map(
                         data =>
                             <CartItem
-                                key={data.id}
+                                key={data.product._id}
                                 {...data}
                             />
                     )

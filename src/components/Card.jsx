@@ -33,23 +33,12 @@ function Card({ _id,
           <b>Edad: {ageFrom} a {ageTo}</b>
           <span>${price}</span>
           <p>Stock: {stock}</p>
-          {delivery && <p>Envío sin cargo.</p>}
+          {delivery ? <p>Envío sin cargo.</p> : undefined}
         </div>
       {
       /* ) */}
 
-      <Counter 
-        _id={_id}
-        toyData={{
-          name,
-          imgUrl,
-          category,
-          brand,
-          stock,
-          price,
-          shortDesc,
-        }}
-      />
+      <Counter _id={_id} />
     </div>
   );
 }

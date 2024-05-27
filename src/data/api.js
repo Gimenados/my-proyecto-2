@@ -34,12 +34,13 @@ export const postProducts = async body => {
 
 //PARA NUESTRO CARRITO
 export const postCart = async body => {
-  const resp = await axiosInstance.post("/cart", {items: body})
+  console.log("Datos enviados a /cart:", { items: body });
+  const resp = await axiosInstance.post("/cart", { items: [body] });
   return resp.data;
-} 
+};
 
 export const editCart = async (id, body) => {
-  const resp = await axiosInstance.put(`/cart/edit/${id}`, {items: body})
+  const resp = await axiosInstance.put(`/cart/edit/${id}`, {items: [body] })
   return resp.data;
 } 
 
