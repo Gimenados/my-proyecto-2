@@ -11,15 +11,15 @@ function Counter({ _id, toyData, initialValue = 0 }) {
     // Para almacenar la cantidad actual del producto en el contador.
     const [count, setCount] = useState(initialValue);
     // Para agregar o eliminar productos del carrito
-    const { addToy, removeToy, CartList } = useContext(CartContext);
+    const { addToy, removeToy, ProductsCartList } = useContext(CartContext);
 
     //Para actualizar el estado del contador
     useEffect(() => {
         //Se busca un juguete que coincida con el id 
-        const toy = CartList.find(toy => toy._id === _id);
+        const toy = ProductsCartList.find(toy => toy._id === _id);
         //Una vez encontrado el juguete se establece el estado del contador, si no se encuentra el juguete el contador se establece a 0
         setCount(toy?.quantity || 0);
-    }, [CartList, _id]); 
+    }, [ProductsCartList, _id]); 
 
     //Boton de ( - )
     const decrement = () => {

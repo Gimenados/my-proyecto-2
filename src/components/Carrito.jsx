@@ -10,7 +10,7 @@ import CartItem from './CartItem';
 //Elementos agregados al carrito
 function Cart() {
     //Obtener la lista de productos 
-    const { CartList } = useContext(CartContext); 
+    const { ProductsCartList } = useContext(CartContext); 
     //Apertura y cierre del modal
     const [open, setOpen] = useState(false);
     
@@ -22,13 +22,13 @@ function Cart() {
                     icon={faShoppingCart}
                     className="cart__navbar-button"
                     action={() => setOpen(!open)}
-                    disabled={!CartList.length} 
+                    disabled={!ProductsCartList.length} 
                 />
                 {
-                    CartList.length ? 
+                    ProductsCartList.length ? 
                         <div className="cart__badge">
                             <span>
-                                {CartList.reduce( 
+                                {ProductsCartList.reduce( 
                                     (acc, toys) => acc + toys.quantity,
                                     0
                                 )}
@@ -48,7 +48,7 @@ function Cart() {
                 </div>
                 {
                     // Itera sobre la lista de productos en el carrito 
-                    CartList.map(
+                    ProductsCartList.map(
                         data =>
                             <CartItem
                                 key={data.id}
