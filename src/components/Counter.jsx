@@ -6,42 +6,28 @@ import { CartContext } from '../context/CartContext'
 import Text from '../components/Text'
 import Button from '../components/Button'
 
-                // Representa el valor inicial del contador.
-function Counter({ _id, product, initialValue = 0 }) {
-    // Para almacenar la cantidad actual del producto en el contador.
+function Counter({ _id, initialValue = 0 }) {
     const [count, setCount] = useState(initialValue);
-    // Para agregar o eliminar productos del carrito
     const { addProd, removeProd, productsCartList } = useContext(CartContext);
 
-    //Para actualizar el estado del contador
     useEffect(() => {
-        //Se busca un juguete que coincida con el id 
-        const productItem = productsCartList.find( prod => prod.product._id === _id)
-        //Una vez encontrado el juguete se establece el estado del contador, si no se encuentra el juguete el contador se establece a 0
+        const productItem = productsCartList.find(prod => prod.product._id === _id);
         setCount(productItem?.quantity || 0);
-    }, [productsCartList, _id]); 
+    }, [productsCartList, _id]);
 
-    //Boton de ( - )
-    const decrement = () => {
-        if (count > 0) {
-            setCount(count - 1);
-            removeProd(_id)
-        }
-        //Mostrar mensaje cuando se retira un producto del carrito
-        alert('El producto fue retirado del carrito')
+    const decrement = e => {
+        e.stopPropagation()
+        if(count > 0) setCount(count - 1)
+        removeProd(_id)
     }
 
-    //Boton de ( + )
-    const increment = () => {
-        setCount(count + 1);
+    const increment = e => {
+        e.stopPropagation()
+        setCount(count + 1)
         addProd({
             _id,
-            product,
             quantity: count + 1
-        });
-
-        // Mostrar mensaje de alerta cuando se agrega un producto
-        alert('El producto fue agregado al carrito');
+        })
     }
 
 

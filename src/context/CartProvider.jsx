@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { CartContext } from './CartContext'
 import { editCart, postCart, getCart } from '../data/api'
 
-function CartProvider({ children }) {
+function CartProvider({children}) {
     // Donde se van a guardar
     const [idCart, setIdCart] = useState(null)
     // Usa useState para crear un estado llamado productsCartList que almacena la lista de juguetes. SetProdCartList para actualizar el estado
@@ -12,7 +12,7 @@ function CartProvider({ children }) {
         const storedIdCart = localStorage.getItem("cartId")
         if (storedIdCart) {
             getCart(storedIdCart)
-                .then(({ cart }) => {
+                .then(({cart}) => {
                     setProdCartList(cart.items)
                     setIdCart(storedIdCart)
                 })
@@ -25,6 +25,7 @@ function CartProvider({ children }) {
             quantity,
             product: _id
         }
+        console.log(data)
         // Con find busca si ya existe un juguete con el mismo ID
         const prodFinded = productsCartList.find(prod => prod.product?._id === _id)
         // Si prodFinded es verdadero, o sea que encontró el ID del juguete
@@ -34,7 +35,7 @@ function CartProvider({ children }) {
                 prod => prod.product?._id === data.product ? data : prod
             )
             editCart(idCart, newCart)
-                .then(({ cart }) => setProdCartList(cart.items))
+                .then(({cart}) => setProdCartList(cart.items))
         // Si no coincide
         } else {
             if (!idCart) {
@@ -48,15 +49,15 @@ function CartProvider({ children }) {
             } else {
                 const newCart = [...productsCartList, data]
                 editCart(idCart, newCart)
-                    .then(({ cart }) => setProdCartList(cart.items))
+                    .then(({cart}) => setProdCartList(cart.items))
             }
         }
     }
 
     // Para eliminar el juguete del carrito
-    const removeProd = id => {
+    const removeProd = (id) => {
         // Toma un parámetro id para eliminar
-        const prodFinded = productsCartList.find(prod => prod.product === id)
+        const prodFinded = productsCartList.find(prod => prod.product?._id === id)
         // Comprueba si prodFinded existe y si la propiedad quantity del juguete es mayor que 1.
         if (prodFinded?.quantity > 1) {
             const newCart = productsCartList.map(
@@ -66,12 +67,12 @@ function CartProvider({ children }) {
                 } : prod
             )
             editCart(idCart, newCart)
-                .then(({ cart }) => setProdCartList(cart.items))
+                .then(({cart}) => setProdCartList(cart.items))
         // Si la cantidad del juguete es igual a 1 o no se encuentra
         } else {
-            const newCart = productsCartList.filter(prod => prod.product !== id)
+            const newCart = productsCartList.filter( prod => prod.product?._id !== id )
             editCart(idCart, newCart)
-                .then(({ cart }) => setProdCartList(cart.items))
+                .then(({cart}) => setProdCartList(cart.items))
         }
     }
 

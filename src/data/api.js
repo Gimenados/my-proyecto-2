@@ -35,16 +35,18 @@ export const postProducts = async body => {
 //PARA NUESTRO CARRITO
 export const postCart = async body => {
   console.log("Datos enviados a /cart:", { items: body });
-  const resp = await axiosInstance.post("/cart", { items: [body] });
+  const resp = await axiosInstance.post("/cart", { items: body });
   return resp.data;
 };
 
 export const editCart = async (id, body) => {
-  const resp = await axiosInstance.put(`/cart/edit/${id}`, {items: [body] })
+  console.log("Datos editados en cart/edit:", { items: body });
+  const resp = await axiosInstance.put(`/cart/edit/${id}`, { items: body });
   return resp.data;
-} 
+};
 
 export const getCart = async id => {
-  const resp = await axiosInstance.get(`/cart/get/${id}`)
+  console.log("Obteniendo datos del carrito:", id);
+  const resp = await axiosInstance.get(`/cart/get/${id}`);
   return resp.data;
-} 
+};

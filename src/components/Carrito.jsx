@@ -11,6 +11,7 @@ import CartItem from './CartItem';
 function Cart() {
     //Obtener la lista de productos 
     const { productsCartList } = useContext(CartContext); 
+    // const navigate = useNavigate()
     //Apertura y cierre del modal
     const [open, setOpen] = useState(false);
     
@@ -22,16 +23,20 @@ function Cart() {
                     icon={faShoppingCart}
                     className="cart__navbar-button"
                     action={() => setOpen(!open)}
-                    disabled={!productsCartList.length} 
+                    disabled={!productsCartList.length}
                 />
-                {productsCartList.length && (
-                    <div className="cart__badge">
-                    <span>
-                   {productsCartList.reduce((acc, toys) => acc + toys.quantity, 0)}
-                  </span>
-            </div>
-            )}
-
+                {
+                    productsCartList.length ?
+                        <div className="cart__badge">
+                            <span>
+                                {productsCartList.reduce(
+                                    (acc, toys) => acc + toys.quantity,
+                                    0
+                                )}
+                            </span>
+                        </div>
+                    : undefined 
+                }
             </div>
             {/* Cuando open es true. Utiliza el componente Modal y pasa el estado open como prop show  */}
             <Modal show={open} onClose={()=>setOpen(false)}>
