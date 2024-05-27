@@ -77,6 +77,7 @@ function CartProvider({children}) {
     }
 
     const resetCart = () => {
+        // Restablecer el carrito a cero
         setIdCart(null)
         localStorage.removeItem("cartId")
         setProdCartList([])
