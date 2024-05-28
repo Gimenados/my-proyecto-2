@@ -19,13 +19,12 @@ function CartProvider({children}) {
         }
     }, [])
 
-    // Para agregar un nuevo juguete al carrito. Datos del juguete con data
+    // Para agregar un nuevo juguete al carrito. Datos del juguete con data ( + )
     const addProd = ({ _id, quantity }) => {
         const data = {
             quantity,
             product: _id
         }
-        console.log(data)
         // Con find busca si ya existe un juguete con el mismo ID
         const prodFinded = productsCartList.find(prod => prod.product?._id === _id)
         // Si prodFinded es verdadero, o sea que encontró el ID del juguete
@@ -41,7 +40,7 @@ function CartProvider({children}) {
             if (!idCart) {
                 postCart([data])
                     .then(({cart}) => {
-                        console.log(cart)
+                        //Guardar el carrito en un estado
                         localStorage.setItem("cartId", cart._id)
                         setIdCart(cart._id)
                         setProdCartList(cart.items)
@@ -54,7 +53,7 @@ function CartProvider({children}) {
         }
     }
 
-    // Para eliminar el juguete del carrito
+    // Para eliminar el juguete del carrito ( - )
     const removeProd = (id) => {
         // Toma un parámetro id para eliminar
         const prodFinded = productsCartList.find(prod => prod.product?._id === id)
@@ -76,6 +75,7 @@ function CartProvider({children}) {
         }
     }
 
+    //Boton final del modal
     const resetCart = () => {
         // Restablecer el carrito a cero
         setIdCart(null)

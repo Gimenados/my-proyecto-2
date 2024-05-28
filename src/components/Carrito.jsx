@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
-import { faClose, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faClose, faCartShopping ,faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 import { CartContext } from "../context/CartContext";
 
@@ -11,7 +12,7 @@ import CartItem from './CartItem';
 function Cart() {
     //Obtener la lista de productos 
     const { productsCartList } = useContext(CartContext); 
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     //Apertura y cierre del modal
     const [open, setOpen] = useState(false);
     
@@ -57,6 +58,17 @@ function Cart() {
                             />
                     )
                 }
+                 <div id="wallet_container" className="modal__footer">
+                        <Button
+                            icon={faCartShopping}
+                            className="modal__btn-buy"
+                            label="Comprar"
+                            action={() => {
+                                navigate("/checkout")
+                                setOpen(!open)
+                            }}
+                        />
+                    </div>
             </Modal>
         </>
     );

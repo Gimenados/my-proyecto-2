@@ -41,6 +41,30 @@
                 justify-self: end;
                 padding: 0.3rem;
                 margin: 1rem;
+                &:hover {
+                    cursor: pointer;
+                    scale: (1.2);
+                }
+            }
+        }
+        .modal__footer {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            .modal__btn-buy {
+                background-color: #ee3622;
+                border: none;
+                border-radius: 0.25rem;
+                color: whitesmoke;
+                font-weight: 900;
+                text-transform: uppercase;
+                margin: 1rem;
+                border: 1px solid red;
+                padding: 0.5rem;
+                &:hover {
+                    cursor: pointer;
+                    scale: (1.2);
+                }
             }
         }
         .cart-item__container {

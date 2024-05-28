@@ -1,7 +1,6 @@
 import axios from "axios";
 
 //TODO: Ruta hardcodeada
-console.log(process.env.REACT_APP_BASE_URL_API)
 const axiosInstance = axios.create({
     baseURL: process.env.REACT_APP_BASE_URL_API
 })
@@ -34,19 +33,22 @@ export const postProducts = async body => {
 
 //PARA NUESTRO CARRITO
 export const postCart = async body => {
-  console.log("Datos enviados a /cart:", { items: body });
   const resp = await axiosInstance.post("/cart", { items: body });
   return resp.data;
 };
 
 export const editCart = async (id, body) => {
-  console.log("Datos editados en cart/edit:", { items: body });
   const resp = await axiosInstance.put(`/cart/edit/${id}`, { items: body });
   return resp.data;
 };
 
 export const getCart = async id => {
-  console.log("Obteniendo datos del carrito:", id);
   const resp = await axiosInstance.get(`/cart/get/${id}`);
   return resp.data;
 };
+
+//CHECKOUT
+export const postPreferenceMP = async body => {
+  const resp = await axiosInstance.post(`checkout`, body)
+  return resp.data;
+} 
