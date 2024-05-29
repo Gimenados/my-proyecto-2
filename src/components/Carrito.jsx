@@ -8,6 +8,7 @@ import Button from "./Button";
 import Modal from "./Modal";
 import CartItem from './CartItem';
 
+
 //Elementos agregados al carrito
 function Cart() {
     //Obtener la lista de productos 
@@ -58,7 +59,7 @@ function Cart() {
                             />
                     )
                 }
-                 <div id="wallet_container" className="modal__footer">
+                 <div id="payment_container" className="modal__footer">
                         <Button
                             icon={faCartShopping}
                             className="modal__btn-buy"
@@ -70,6 +71,8 @@ function Cart() {
                         />
                     </div>
             </Modal>
+            
+
         </>
     );
 }

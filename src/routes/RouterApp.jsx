@@ -8,6 +8,7 @@ import Contacto from "../pages/Contacto"
 
 import NavBar from "../layout/NavBar";
 import Footer from "../layout/Footer";
+import Checkout from "../pages/Checkout";
 
 function RouterApp() {
   return (
@@ -24,6 +25,7 @@ function RouterApp() {
         <Route path="/alta" element={<Alta />} />
         {/* Agregar a la ruta para la pagina Contacto */}
         <Route path="/contacto" element={<Contacto />} />
+        <Route path="/checkout" element={<Checkout />}></Route>
       </Routes>
       
       {/* Definimos una ruta separada para el Footer */}

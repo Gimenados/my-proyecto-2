@@ -4,7 +4,7 @@ import { Wallet } from '@mercadopago/sdk-react';
 import { CartContext } from '../context/CartContext';
 import CartItem from '../components/CartItem';
 
-import { postPreferenceMP } from '../util/api';
+import { postPreferenceMP } from '../data/api';
 
 function Checkout() {
     const [prefId, setPrefId] = useState("")
@@ -12,6 +12,7 @@ function Checkout() {
 
     useEffect(() => {
         console.log(productsCartList)
+        //Vamos a rearmar este map
         const itemsList = productsCartList.map(({product, quantity}) => ({
             id: product._id,
             title: product.title,
@@ -22,13 +23,14 @@ function Checkout() {
         postPreferenceMP({
             items: itemsList
         })
+        //Lo q me devuelva hago preferencia a determinado id 
             .then( data => setPrefId(data.preferenceId))
             .catch(console.log)
     }, [productsCartList])
     
 
     return (
-        <div>
+        <div className='checkout_container'>
             {
                 productsCartList.map(
                     data =>
