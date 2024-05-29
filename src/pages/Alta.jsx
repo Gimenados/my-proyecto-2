@@ -5,7 +5,7 @@ import { useForm } from '../hooks/useForm';
 import { postProducts } from '../data/api';
 import { validateForm, showErrors, showLoadedProduct } from '../hooks/Validation';
 
-//Variable que contiene las propiedades que representan los campos del formulario
+// Variable que contiene las propiedades que representan los campos del formulario
 const initialValue = {
     name: "",
     price: 0,
@@ -20,7 +20,7 @@ const initialValue = {
 
 function Alta() {
     const { values, handleInputChange, resetForm } = useForm(initialValue);
-    const [ setLoadingForm] = useState(false);
+    const [loadingForm, setLoadingForm] = useState(false); // Desestructuramos correctamente
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -46,7 +46,7 @@ function Alta() {
         }
     };
 
-    //Obheto que contiene la configurracion para cada campo del formulario
+    // Objeto que contiene la configuración para cada campo del formulario
     const inputProps = {
         name: {
             inputLabel: "Nombre",
@@ -95,10 +95,11 @@ function Alta() {
         <form className="form_container_high" id="uploadForm" onSubmit={handleSubmit}>
             <Text renderAs='h2' content='Formulario de Alta' />
 
+            {loadingForm && <p>Loading...</p>}
+
             {/* Grupo 1: Información general */}
             <fieldset>
                 <legend>Información general</legend>
-                {/* Object para tomar el objeto y iterar sobre cada uno de los inputs  */}
                 {Object.entries(inputProps).map(([key, props]) => (
                     key === 'name' || key === 'price' || key === 'stock' || key === 'brand' || key === 'category' ? (
                         <InputField
@@ -147,47 +148,46 @@ function Alta() {
                 ))}
             </fieldset>
 
-          {/* Grupo 4: Foto */}
-           <fieldset>
+            {/* Grupo 4: Foto */}
+            <fieldset>
                 <legend>Foto</legend>
                 {Object.entries(inputProps).map(([key, props]) => (
                     key === 'image' ? (
                         <InputField
-                           key={key}
-                           id={key}
-                           label={props.inputLabel}
-                           type={props.inputType}
-                           value={values[key]}
-                           onChange={handleInputChange}
+                            key={key}
+                            id={key}
+                            label={props.inputLabel}
+                            type={props.inputType}
+                            value={values[key]}
+                            onChange={handleInputChange}
                         />
                     ) : null
-                 ))}
+                ))}
             </fieldset>
 
             {/* Grupo 5: delivery */}
             <fieldset>
-            {Object.entries(inputProps).map(([key, props]) => (
+                {Object.entries(inputProps).map(([key, props]) => (
                     key === 'delivery' ? (
-                          <InputField
-                             key={key}
-                             id={key}
-                             label={props.inputLabel}
-                             type={props.inputType}
-                             value={values[key]}
-                             onChange={handleInputChange}
-             />
+                        <InputField
+                            key={key}
+                            id={key}
+                            label={props.inputLabel}
+                            type={props.inputType}
+                            value={values[key]}
+                            onChange={handleInputChange}
+                        />
                     ) : null
                 ))}
             </fieldset>
 
             <div className="button_container">
-                <button type="submit" className="btn btn-primary">Guardar producto</button>
+                <button type="submit" className="btn btn-primary" disabled={loadingForm}>
+                    {loadingForm ? 'Guardando...' : 'Guardar producto'}
+                </button>
             </div>
         </form>
     );
 }
 
 export default Alta;
-
-
-
